@@ -1,1645 +1,1808 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBM Menderes - GELİYORUZ!</title>
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <link rel="apple-touch-icon" href="logo.jpg">
-    <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <head>
+    <title>MBMENDERES - 4-6 ARALIK 2026!</title>
+    <meta name="title" content="MBMENDERES - 4-6 ARALIK 2026!" />
+    <meta
+      name="description"
+      content="Adnan Menderes Anadolu Lisesi ev sahipliğinde düzenlenecek MBMENDERES’26, katılımcılarını uluslararası meseleleri tartışmaya, farklı bakış açılarını savunmaya ve karmaşık sorunlara çözüm üretmeye davet ediyor."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mbmenderes.org/" />
+    <meta property="og:title" content="MBMENDERES - 4-6 ARALIK 2026!" />
+    <meta
+      property="og:description"
+      content="Adnan Menderes Anadolu Lisesi ev sahipliğinde düzenlenecek MBMENDERES’26, katılımcılarını uluslararası meseleleri tartışmaya, farklı bakış açılarını savunmaya ve karmaşık sorunlara çözüm üretmeye davet ediyor."
+    />
+    <meta
+      property="og:image"
+      content="logo.jpg"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://mbmenderes.org/" />
+    <meta property="twitter:title" content="MBMENDERES - 4-6 ARALIK 2026!" />
+    <meta
+      property="twitter:description"
+      content="Adnan Menderes Anadolu Lisesi ev sahipliğinde düzenlenecek MBMENDERES’26, katılımcılarını uluslararası meseleleri tartışmaya, farklı bakış açılarını savunmaya ve karmaşık sorunlara çözüm üretmeye davet ediyor."
+    />
+    <meta
+      property="twitter:image"
+      content="logo.jpg"
+    />
+    <meta name="author" content="OCAL">
+    <link rel="icon" type="image/jpeg" href="logo.jpg" />
+    <link rel="apple-touch-icon" href="logo.jpg" />
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Caveat:wght@700&family=Anton&family=Open+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&family=Caveat:wght@700&family=Anton&family=Open+Sans:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        html {
-            scroll-behavior: smooth;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #0d0d0d;
-            color: #ffffff;
-            overflow-x: hidden;
-            user-select: none;
-        }
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #0d0d0d;
+        color: #ffffff;
+        overflow-x: hidden;
+        user-select: none;
+      }
 
-        #hero {
-            position: relative;
-            width: 100vw;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #151515;
-            background-image: 
-                radial-gradient(circle, #2a2a2a 2px, transparent 2px),
-                radial-gradient(circle, #2a2a2a 2px, transparent 2px);
-            background-size: 28px 28px;
-            background-position: 0 0, 14px 14px;
-            overflow: hidden;
-            padding: clamp(86px, 11vh, 118px) clamp(12px, 3vw, 30px) clamp(12px, 3vw, 30px);
-        }
+      #hero {
+        position: relative;
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #151515;
+        background-image:
+          radial-gradient(circle, #2a2a2a 2px, transparent 2px),
+          radial-gradient(circle, #2a2a2a 2px, transparent 2px);
+        background-size: 28px 28px;
+        background-position:
+          0 0,
+          14px 14px;
+        overflow: hidden;
+        padding: clamp(86px, 11vh, 118px) clamp(12px, 3vw, 30px)
+          clamp(12px, 3vw, 30px);
+      }
 
-        .comic-panels-bg {
-            position: absolute;
-            inset: 0;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 12px;
-            padding: 12px;
-            opacity: 0.18;
-            pointer-events: none;
-            z-index: 1;
-            transform: skewY(-2deg) scale(1.05);
-        }
+      .comic-panels-bg {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 12px;
+        padding: 12px;
+        opacity: 0.18;
+        pointer-events: none;
+        z-index: 1;
+        transform: skewY(-2deg) scale(1.05);
+      }
 
-        .comic-panel {
-            border: 4px solid #ffffff;
-            background: linear-gradient(135deg, #1f1f1f 0%, #050505 100%);
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.9);
-        }
+      .comic-panel {
+        border: 4px solid #ffffff;
+        background: linear-gradient(135deg, #1f1f1f 0%, #050505 100%);
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9);
+      }
 
-        .brawl-container {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            z-index: 3;
-            overflow: hidden;
-        }
+      .brawl-container {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 3;
+        overflow: hidden;
+      }
 
-        .brawl-cloud {
-            position: absolute;
-            filter: drop-shadow(0 0 15px rgba(0,0,0,0.8));
-        }
+      .brawl-cloud {
+        position: absolute;
+        filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.8));
+      }
 
-        .asymmetric-container {
-            position: relative;
-            z-index: 10;
-            width: 100%;
-            max-width: 1300px;
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            pointer-events: none;
-            gap: clamp(15px, 3vw, 30px);
-            opacity: 0;
-            transition: opacity 0.8s ease-in-out;
-        }
+      .asymmetric-container {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        max-width: 1300px;
+        min-height: 85vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        pointer-events: none;
+        gap: clamp(15px, 3vw, 30px);
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+      }
 
-        .asymmetric-container.visible {
-            opacity: 1;
-        }
+      .asymmetric-container.visible {
+        opacity: 1;
+      }
 
-        .asymmetric-container * {
-            pointer-events: auto;
-        }
+      .asymmetric-container * {
+        pointer-events: auto;
+      }
 
-        .header-asymmetric {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding-top: 10px;
-            gap: 15px;
-            opacity: 0;
-            transform: translateY(-20px);
-            transition: all 0.8s ease-out;
-        }
+      .header-asymmetric {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-top: 10px;
+        gap: 15px;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: all 0.8s ease-out;
+      }
 
-        .header-asymmetric.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      .header-asymmetric.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        .logo-badge {
-            background-color: #000000;
-            border: 4px solid #E2C044;
-            border-radius: 50%;
-            width: clamp(80px, 11vw, 150px);
-            height: clamp(80px, 11vw, 150px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 
-                6px 6px 0px #000000,
-                0 0 25px rgba(226, 192, 68, 0.4);
-            transform: rotate(-10deg);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            flex-shrink: 0;
-            overflow: hidden;
-            padding: 8px;
-        }
+      .logo-badge {
+        background-color: #000000;
+        border: 4px solid #e2c044;
+        border-radius: 50%;
+        width: clamp(80px, 11vw, 150px);
+        height: clamp(80px, 11vw, 150px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow:
+          6px 6px 0px #000000,
+          0 0 25px rgba(226, 192, 68, 0.4);
+        transform: rotate(-10deg);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        cursor: pointer;
+        flex-shrink: 0;
+        overflow: hidden;
+        padding: 8px;
+      }
 
-        .logo-badge img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
+      .logo-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
 
-        .logo-badge:hover {
-            transform: rotate(5deg) scale(1.1);
-            border-color: #ffffff;
-            box-shadow: 10px 10px 0px #E2C044;
-        }
+      .logo-badge:hover {
+        transform: rotate(5deg) scale(1.1);
+        border-color: #ffffff;
+        box-shadow: 10px 10px 0px #e2c044;
+      }
 
-        .event-tag {
-            background: #E2C044;
-            color: #000;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1rem, 1.8vw, 1.8rem);
-            padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 22px);
-            border: 4px solid #000;
-            transform: rotate(4deg);
-            box-shadow: 5px 5px 0px #000;
-            letter-spacing: 2px;
-            white-space: nowrap;
-        }
+      .event-tag {
+        background: #e2c044;
+        color: #000;
+        font-family: "Bangers", cursive;
+        font-size: clamp(1rem, 1.8vw, 1.8rem);
+        padding: clamp(6px, 1vw, 10px) clamp(12px, 2vw, 22px);
+        border: 4px solid #000;
+        transform: rotate(4deg);
+        box-shadow: 5px 5px 0px #000;
+        letter-spacing: 2px;
+        white-space: nowrap;
+      }
 
-        .title-stack-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin: 10px 0;
-            position: relative;
-            cursor: pointer;
-            width: 100%;
-            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+      .title-stack-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 10px 0;
+        position: relative;
+        cursor: pointer;
+        width: 100%;
+        transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+      }
 
-        .title-stack-container.intro-centered {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1.1);
-            z-index: 150;
-            width: max-content;
-            margin: 0;
-            pointer-events: none;
-        }
+      .title-stack-container.intro-centered {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.1);
+        z-index: 150;
+        width: max-content;
+        margin: 0;
+        pointer-events: none;
+      }
 
-        .single-line-text {
-            font-family: 'Anton', impact, sans-serif;
-            font-size: clamp(3rem, 10vw, 10rem);
-            line-height: 0.85;
-            text-transform: uppercase;
-            color: #E2C044;
-            -webkit-text-stroke: clamp(2px, 0.4vw, 5px) #000000;
-            paint-order: stroke fill;
-            text-shadow: clamp(5px, 0.9vw, 12px) clamp(5px, 0.9vw, 12px) 0px #000000;
-            transform: rotate(-3deg);
-            filter: drop-shadow(0 0 25px rgba(226, 192, 68, 0.4));
-            letter-spacing: 2px;
-            white-space: nowrap;
-            transition: all 0.8s ease;
-        }
+      .single-line-text {
+        font-family: "Anton", impact, sans-serif;
+        font-size: clamp(3rem, 10vw, 10rem);
+        line-height: 0.85;
+        text-transform: uppercase;
+        color: #e2c044;
+        -webkit-text-stroke: clamp(2px, 0.4vw, 5px) #000000;
+        paint-order: stroke fill;
+        text-shadow: clamp(5px, 0.9vw, 12px) clamp(5px, 0.9vw, 12px) 0px #000000;
+        transform: rotate(-3deg);
+        filter: drop-shadow(0 0 25px rgba(226, 192, 68, 0.4));
+        letter-spacing: 2px;
+        white-space: nowrap;
+        transition: all 0.8s ease;
+      }
 
-        .sub-explode-text {
-            font-family: 'Anton', impact, sans-serif;
-            font-size: clamp(2.5rem, 8.5vw, 8.5rem);
-            line-height: 0.85;
-            text-transform: uppercase;
-            color: #ffffff;
-            -webkit-text-stroke: clamp(2px, 0.35vw, 4px) #000000;
-            paint-order: stroke fill;
-            text-shadow: clamp(4px, 0.7vw, 10px) clamp(4px, 0.7vw, 10px) 0px #000000;
-            transform: rotate(2deg) translateX(4vw);
-            letter-spacing: 1px;
-            white-space: nowrap;
-            opacity: 0;
-            pointer-events: none;
-        }
+      .sub-explode-text {
+        font-family: "Anton", impact, sans-serif;
+        font-size: clamp(2.5rem, 8.5vw, 8.5rem);
+        line-height: 0.85;
+        text-transform: uppercase;
+        color: #ffffff;
+        -webkit-text-stroke: clamp(2px, 0.35vw, 4px) #000000;
+        paint-order: stroke fill;
+        text-shadow: clamp(4px, 0.7vw, 10px) clamp(4px, 0.7vw, 10px) 0px #000000;
+        transform: rotate(2deg) translateX(4vw);
+        letter-spacing: 1px;
+        white-space: nowrap;
+        opacity: 0;
+        pointer-events: none;
+      }
 
-        .sub-explode-text.exploded {
-            opacity: 1;
-            animation: explodeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
+      .sub-explode-text.exploded {
+        opacity: 1;
+        animation: explodeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          forwards;
+      }
 
-        .asymmetric-footer {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            gap: clamp(15px, 3vw, 30px);
-            width: 100%;
-            margin-top: auto;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease-out;
-        }
+      .asymmetric-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: clamp(15px, 3vw, 30px);
+        width: 100%;
+        margin-top: auto;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.8s ease-out;
+      }
 
-        .asymmetric-footer.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      .asymmetric-footer.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
 
-        .cta-btn {
-            padding: clamp(12px, 1.8vw, 20px) clamp(20px, 3vw, 42px);
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1.2rem, 2.3vw, 2.2rem);
-            letter-spacing: clamp(1px, 0.2vw, 2px);
-            color: #000000;
-            background-color: #E2C044;
-            border: clamp(3px, 0.4vw, 5px) solid #000000;
-            cursor: pointer;
-            box-shadow: clamp(5px, 0.7vw, 9px) clamp(5px, 0.7vw, 9px) 0px #000000;
-            text-transform: uppercase;
-            transform: rotate(2.5deg);
-            transition: all 0.2s ease;
-            white-space: nowrap;
-            flex-shrink: 0;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-        }
+      .cta-btn {
+        padding: clamp(12px, 1.8vw, 20px) clamp(20px, 3vw, 42px);
+        font-family: "Bangers", cursive;
+        font-size: clamp(1.2rem, 2.3vw, 2.2rem);
+        letter-spacing: clamp(1px, 0.2vw, 2px);
+        color: #000000;
+        background-color: #e2c044;
+        border: clamp(3px, 0.4vw, 5px) solid #000000;
+        cursor: pointer;
+        box-shadow: clamp(5px, 0.7vw, 9px) clamp(5px, 0.7vw, 9px) 0px #000000;
+        text-transform: uppercase;
+        transform: rotate(2.5deg);
+        transition: all 0.2s ease;
+        white-space: nowrap;
+        flex-shrink: 0;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
 
-        .cta-btn:hover {
-            background-color: #ffffff;
-            transform: rotate(-1deg) scale(1.04);
-            box-shadow: clamp(7px, 0.9vw, 12px) clamp(7px, 0.9vw, 12px) 0px #E2C044;
-        }
+      .cta-btn:hover {
+        background-color: #ffffff;
+        transform: rotate(-1deg) scale(1.04);
+        box-shadow: clamp(7px, 0.9vw, 12px) clamp(7px, 0.9vw, 12px) 0px #e2c044;
+      }
 
-        .cta-btn:active {
-            transform: scale(0.96);
-            box-shadow: 3px 3px 0px #000000;
-        }
+      .cta-btn:active {
+        transform: scale(0.96);
+        box-shadow: 3px 3px 0px #000000;
+      }
 
-        .skip-intro-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            z-index: 250;
-            background: #000;
-            color: #E2C044;
-            border: 3px solid #E2C044;
-            font-family: 'Bangers', cursive;
-            padding: clamp(8px, 1.2vw, 12px) clamp(16px, 2vw, 28px);
-            font-size: clamp(1rem, 1.5vw, 1.4rem);
-            letter-spacing: 2px;
-            cursor: pointer;
-            box-shadow: 5px 5px 0 #E2C044;
-            transition: all 0.2s;
-        }
+      .skip-intro-btn {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 250;
+        background: #000;
+        color: #e2c044;
+        border: 3px solid #e2c044;
+        font-family: "Bangers", cursive;
+        padding: clamp(8px, 1.2vw, 12px) clamp(16px, 2vw, 28px);
+        font-size: clamp(1rem, 1.5vw, 1.4rem);
+        letter-spacing: 2px;
+        cursor: pointer;
+        box-shadow: 5px 5px 0 #e2c044;
+        transition: all 0.2s;
+      }
 
-        .skip-intro-btn:hover {
-            background: #E2C044;
-            color: #000;
-            box-shadow: 5px 5px 0 #fff;
-        }
+      .skip-intro-btn:hover {
+        background: #e2c044;
+        color: #000;
+        box-shadow: 5px 5px 0 #fff;
+      }
 
-        @keyframes explodeIn {
-            0% { 
-                opacity: 0; 
-                transform: rotate(2deg) translateX(4vw) scale(2.8); 
-                filter: drop-shadow(0 0 60px #E2C044); 
-            }
-            60% { 
-                opacity: 1; 
-                transform: rotate(2deg) translateX(4vw) scale(0.9); 
-            }
-            100% { 
-                opacity: 1; 
-                transform: rotate(2deg) translateX(4vw) scale(1); 
-            }
+      @keyframes explodeIn {
+        0% {
+          opacity: 0;
+          transform: rotate(2deg) translateX(4vw) scale(2.8);
+          filter: drop-shadow(0 0 60px #e2c044);
         }
-
-        @keyframes smokeAnim {
-            0% { opacity: 0; transform: scale(0.2) translateY(0); }
-            50% { opacity: 0.95; }
-            100% { opacity: 0; transform: scale(1.6) translateY(-50px); }
+        60% {
+          opacity: 1;
+          transform: rotate(2deg) translateX(4vw) scale(0.9);
         }
-
-        @keyframes punchAnim {
-            0% { opacity: 0; transform: scale(0) rotate(-20deg); }
-            40% { opacity: 1; transform: scale(1.3) rotate(10deg); }
-            80% { opacity: 1; transform: scale(1.1) rotate(-5deg); }
-            100% { opacity: 0; transform: scale(0.8) rotate(15deg); }
+        100% {
+          opacity: 1;
+          transform: rotate(2deg) translateX(4vw) scale(1);
         }
+      }
 
-        .smoke-cloud-interactive {
-            position: absolute;
-            pointer-events: none;
-            z-index: 25;
-            animation: smokeAnim 0.8s ease-out forwards;
+      @keyframes smokeAnim {
+        0% {
+          opacity: 0;
+          transform: scale(0.2) translateY(0);
         }
-
-        .punch-fx-interactive {
-            position: absolute;
-            pointer-events: none;
-            z-index: 30;
-            animation: punchAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        50% {
+          opacity: 0.95;
         }
-
-        .applications-section {
-            position: relative;
-            width: 100%;
-            padding: clamp(70px, 9vw, 140px) clamp(16px, 4vw, 60px) clamp(70px, 10vw, 140px);
-            background-color: #0d0d0d;
-            background-image:
-                radial-gradient(circle, rgba(150, 150, 150, 0.13) 2px, transparent 2px),
-                radial-gradient(circle, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
-            background-size: 26px 26px, 26px 26px;
-            background-position: 0 0, 13px 13px;
-            border-top: 6px solid #000000;
-            overflow: hidden;
-            isolation: isolate;
-            scroll-margin-top: 76px;
-            animation: appDotsDrift 24s linear infinite;
+        100% {
+          opacity: 0;
+          transform: scale(1.6) translateY(-50px);
         }
+      }
 
-        .applications-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 16px;
-            background: repeating-linear-gradient(90deg, #E2C044 0 34px, #000000 34px 68px);
-            z-index: 4;
+      @keyframes punchAnim {
+        0% {
+          opacity: 0;
+          transform: scale(0) rotate(-20deg);
         }
-
-        .applications-section::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 30%, rgba(160, 160, 160, 0.08), transparent 55%);
-            pointer-events: none;
-            z-index: 1;
+        40% {
+          opacity: 1;
+          transform: scale(1.3) rotate(10deg);
         }
-
-        .applications-bg {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 0;
+        80% {
+          opacity: 1;
+          transform: scale(1.1) rotate(-5deg);
         }
-
-        .app-bg-rays {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 170vmax;
-            height: 170vmax;
-            margin: -85vmax 0 0 -85vmax;
-            background: repeating-conic-gradient(
-                from 0deg,
-                rgba(160, 160, 160, 0.1) 0deg 5deg,
-                transparent 5deg 18deg
-            );
-            animation: appRaysSpin 55s linear infinite;
-            -webkit-mask-image: radial-gradient(circle, #000000 0%, transparent 62%);
-            mask-image: radial-gradient(circle, #000000 0%, transparent 62%);
-            opacity: 0.75;
+        100% {
+          opacity: 0;
+          transform: scale(0.8) rotate(15deg);
         }
+      }
 
-        .app-bg-speedlines {
-            position: absolute;
-            inset: -30%;
-            background: repeating-linear-gradient(
-                115deg,
-                transparent 0 38px,
-                rgba(255, 255, 255, 0.055) 38px 42px,
-                transparent 42px 96px
-            );
-            animation: appSpeedSlide 9s linear infinite;
+      .smoke-cloud-interactive {
+        position: absolute;
+        pointer-events: none;
+        z-index: 25;
+        animation: smokeAnim 0.8s ease-out forwards;
+      }
+
+      .punch-fx-interactive {
+        position: absolute;
+        pointer-events: none;
+        z-index: 30;
+        animation: punchAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          forwards;
+      }
+
+      .applications-section {
+        position: relative;
+        width: 100%;
+        padding: clamp(70px, 9vw, 140px) clamp(16px, 4vw, 60px)
+          clamp(70px, 10vw, 140px);
+        background-color: #0d0d0d;
+        background-image:
+          radial-gradient(
+            circle,
+            rgba(150, 150, 150, 0.13) 2px,
+            transparent 2px
+          ),
+          radial-gradient(
+            circle,
+            rgba(255, 255, 255, 0.05) 2px,
+            transparent 2px
+          );
+        background-size:
+          26px 26px,
+          26px 26px;
+        background-position:
+          0 0,
+          13px 13px;
+        border-top: 6px solid #000000;
+        overflow: hidden;
+        isolation: isolate;
+        scroll-margin-top: 76px;
+        animation: appDotsDrift 24s linear infinite;
+      }
+
+      .applications-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 16px;
+        background: repeating-linear-gradient(
+          90deg,
+          #e2c044 0 34px,
+          #000000 34px 68px
+        );
+        z-index: 4;
+      }
+
+      .applications-section::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 50% 30%,
+          rgba(160, 160, 160, 0.08),
+          transparent 55%
+        );
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .applications-bg {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .app-bg-rays {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 170vmax;
+        height: 170vmax;
+        margin: -85vmax 0 0 -85vmax;
+        background: repeating-conic-gradient(
+          from 0deg,
+          rgba(160, 160, 160, 0.1) 0deg 5deg,
+          transparent 5deg 18deg
+        );
+        animation: appRaysSpin 55s linear infinite;
+        -webkit-mask-image: radial-gradient(
+          circle,
+          #000000 0%,
+          transparent 62%
+        );
+        mask-image: radial-gradient(circle, #000000 0%, transparent 62%);
+        opacity: 0.75;
+      }
+
+      .app-bg-speedlines {
+        position: absolute;
+        inset: -30%;
+        background: repeating-linear-gradient(
+          115deg,
+          transparent 0 38px,
+          rgba(255, 255, 255, 0.055) 38px 42px,
+          transparent 42px 96px
+        );
+        animation: appSpeedSlide 9s linear infinite;
+      }
+
+      .app-bg-symbols span {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        font-family: "Bangers", cursive;
+        font-size: clamp(1.5rem, 3vw, 3.2rem);
+        letter-spacing: 2px;
+        color: transparent;
+        -webkit-text-stroke: 1.5px rgba(170, 170, 170, 0.35);
+        transform: rotate(var(--r));
+        animation: appSymbolFloat var(--dur) ease-in-out infinite alternate;
+        animation-delay: var(--delay);
+        opacity: 0.8;
+      }
+
+      .app-bg-symbols span:nth-child(2n) {
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.22);
+      }
+
+      @keyframes appDotsDrift {
+        0% {
+          background-position:
+            0 0,
+            13px 13px;
         }
-
-        .app-bg-symbols span {
-            position: absolute;
-            left: var(--x);
-            top: var(--y);
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1.5rem, 3vw, 3.2rem);
-            letter-spacing: 2px;
-            color: transparent;
-            -webkit-text-stroke: 1.5px rgba(170, 170, 170, 0.35);
-            transform: rotate(var(--r));
-            animation: appSymbolFloat var(--dur) ease-in-out infinite alternate;
-            animation-delay: var(--delay);
-            opacity: 0.8;
+        100% {
+          background-position:
+            52px 26px,
+            65px 39px;
         }
+      }
 
-        .app-bg-symbols span:nth-child(2n) {
-            -webkit-text-stroke-color: rgba(255, 255, 255, 0.22);
+      @keyframes appRaysSpin {
+        from {
+          transform: rotate(0deg);
         }
-
-        @keyframes appDotsDrift {
-            0% {
-                background-position: 0 0, 13px 13px;
-            }
-            100% {
-                background-position: 52px 26px, 65px 39px;
-            }
+        to {
+          transform: rotate(360deg);
         }
+      }
 
-        @keyframes appRaysSpin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+      @keyframes appSpeedSlide {
+        from {
+          transform: translate3d(-90px, 0, 0);
         }
-
-        @keyframes appSpeedSlide {
-            from {
-                transform: translate3d(-90px, 0, 0);
-            }
-            to {
-                transform: translate3d(90px, 0, 0);
-            }
+        to {
+          transform: translate3d(90px, 0, 0);
         }
+      }
 
-        @keyframes appSymbolFloat {
-            from {
-                transform: translateY(0) rotate(var(--r));
-            }
-            to {
-                transform: translateY(-28px) rotate(calc(var(--r) + 9deg));
-            }
+      @keyframes appSymbolFloat {
+        from {
+          transform: translateY(0) rotate(var(--r));
         }
-
-        .applications-header {
-            position: relative;
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: clamp(12px, 1.6vw, 20px);
-            max-width: 900px;
-            margin: 0 auto;
+        to {
+          transform: translateY(-28px) rotate(calc(var(--r) + 9deg));
         }
+      }
 
-        .applications-kicker {
-            display: inline-block;
-            background: #E2C044;
-            color: #000000;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(0.9rem, 1.5vw, 1.3rem);
-            letter-spacing: 3px;
-            padding: 8px clamp(14px, 2vw, 22px);
-            border: 4px solid #000000;
-            transform: rotate(3deg);
-            box-shadow: 5px 5px 0px #000000;
-        }
+      .applications-header {
+        position: relative;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: clamp(12px, 1.6vw, 20px);
+        max-width: 900px;
+        margin: 0 auto;
+      }
 
-        .applications-title {
-            font-family: 'Anton', impact, sans-serif;
-            font-size: clamp(2.8rem, 7vw, 6.5rem);
-            line-height: 0.9;
-            text-transform: uppercase;
-            color: #E2C044;
-            -webkit-text-stroke: clamp(2px, 0.35vw, 4px) #000000;
-            paint-order: stroke fill;
-            text-shadow: clamp(5px, 0.8vw, 10px) clamp(5px, 0.8vw, 10px) 0px #000000;
-            transform: rotate(-3deg);
-            letter-spacing: 2px;
-        }
+      .applications-kicker {
+        display: inline-block;
+        background: #e2c044;
+        color: #000000;
+        font-family: "Bangers", cursive;
+        font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+        letter-spacing: 3px;
+        padding: 8px clamp(14px, 2vw, 22px);
+        border: 4px solid #000000;
+        transform: rotate(3deg);
+        box-shadow: 5px 5px 0px #000000;
+      }
 
-        .applications-title span {
-            color: inherit;
-        }
+      .applications-title {
+        font-family: "Anton", impact, sans-serif;
+        font-size: clamp(2.8rem, 7vw, 6.5rem);
+        line-height: 0.9;
+        text-transform: uppercase;
+        color: #e2c044;
+        -webkit-text-stroke: clamp(2px, 0.35vw, 4px) #000000;
+        paint-order: stroke fill;
+        text-shadow: clamp(5px, 0.8vw, 10px) clamp(5px, 0.8vw, 10px) 0px #000000;
+        transform: rotate(-3deg);
+        letter-spacing: 2px;
+      }
 
-        .applications-desc {
-            font-family: 'Caveat', cursive;
-            font-weight: 700;
-            font-size: clamp(1.2rem, 2.2vw, 1.8rem);
-            line-height: 1.3;
-            color: #d8d8d8;
-            max-width: 620px;
-        }
+      .applications-title span {
+        color: inherit;
+      }
 
-        .applications-fees {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 4px 10px;
-            margin-top: 2px;
-            padding: 6px 14px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 2px dashed rgba(226, 192, 68, 0.6);
-            font-family: 'Open Sans', sans-serif;
-            font-size: clamp(0.62rem, 0.78vw, 0.74rem);
-            letter-spacing: 0.4px;
-            color: #bdbdbd;
-            transform: rotate(-1deg);
-        }
+      .applications-desc {
+        font-family: "Caveat", cursive;
+        font-weight: 700;
+        font-size: clamp(1.2rem, 2.2vw, 1.8rem);
+        line-height: 1.3;
+        color: #d8d8d8;
+        max-width: 620px;
+      }
 
-        .applications-fees strong {
-            color: #E2C044;
-            font-weight: 800;
-        }
+      .applications-fees {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 4px 10px;
+        margin-top: 2px;
+        padding: 6px 14px;
+        background: rgba(0, 0, 0, 0.6);
+        border: 2px dashed rgba(226, 192, 68, 0.6);
+        font-family: "Open Sans", sans-serif;
+        font-size: clamp(0.62rem, 0.78vw, 0.74rem);
+        letter-spacing: 0.4px;
+        color: #bdbdbd;
+        transform: rotate(-1deg);
+      }
 
-        .applications-fees .fee-divider {
-            color: #555555;
-        }
+      .applications-fees strong {
+        color: #e2c044;
+        font-weight: 800;
+      }
 
-        .section-sticker {
-            position: absolute;
-            z-index: 2;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1.2rem, 2vw, 2rem);
-            letter-spacing: 2px;
-            padding: 8px 18px;
-            color: #ffffff;
-            background: #E63946;
-            border: 4px solid #000000;
-            box-shadow: 6px 6px 0px #000000;
-            text-shadow: 2px 2px 0px #000000;
-            pointer-events: none;
-        }
+      .applications-fees .fee-divider {
+        color: #555555;
+      }
 
-        .sticker-one {
-            top: 13%;
-            left: 4%;
-            transform: rotate(-12deg);
-        }
+      .section-sticker {
+        position: absolute;
+        z-index: 2;
+        font-family: "Bangers", cursive;
+        font-size: clamp(1.2rem, 2vw, 2rem);
+        letter-spacing: 2px;
+        padding: 8px 18px;
+        color: #ffffff;
+        background: #e63946;
+        border: 4px solid #000000;
+        box-shadow: 6px 6px 0px #000000;
+        text-shadow: 2px 2px 0px #000000;
+        pointer-events: none;
+      }
 
-        .sticker-two {
-            top: 22%;
-            right: 4%;
-            background: #3A86FF;
-            transform: rotate(9deg);
-        }
+      .sticker-one {
+        top: 13%;
+        left: 4%;
+        transform: rotate(-12deg);
+      }
 
-        .sticker-three {
-            bottom: 8%;
-            left: 8%;
-            background: #E2C044;
-            color: #000000;
-            text-shadow: none;
-            transform: rotate(-7deg);
-        }
+      .sticker-two {
+        top: 22%;
+        right: 4%;
+        background: #3a86ff;
+        transform: rotate(9deg);
+      }
 
+      .sticker-three {
+        bottom: 8%;
+        left: 8%;
+        background: #e2c044;
+        color: #000000;
+        text-shadow: none;
+        transform: rotate(-7deg);
+      }
+
+      .application-grid {
+        position: relative;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: clamp(18px, 2.2vw, 30px);
+        max-width: 1320px;
+        margin: clamp(35px, 5vw, 65px) auto 0;
+      }
+
+      @media (max-width: 1300px) {
         .application-grid {
-            position: relative;
-            z-index: 3;
-            display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
-            gap: clamp(18px, 2.2vw, 30px);
-            max-width: 1320px;
-            margin: clamp(35px, 5vw, 65px) auto 0;
-        }
-
-        @media (max-width: 1300px) {
-            .application-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                max-width: 1000px;
-            }
-        }
-
-        .app-card {
-            --accent: #E2C044;
-            --tilt: 0deg;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
-            min-height: 100%;
-            padding: clamp(20px, 2vw, 28px);
-            padding-top: clamp(28px, 2.6vw, 38px);
-            background: linear-gradient(160deg, #202020 0%, #070707 100%);
-            border: 5px solid #ffffff;
-            box-shadow: 9px 9px 0px var(--accent);
-            transform: rotate(var(--tilt));
-            text-decoration: none;
-            color: #ffffff;
-            overflow: hidden;
-            opacity: 1;
-            transition: transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.28s ease, border-color 0.28s ease;
-        }
-
-        .applications-section:not(.in-view) .app-card {
-            opacity: 0;
-            transform: translateY(50px) rotate(var(--tilt));
-        }
-
-        .applications-section.in-view .app-card {
-            animation: cardSlam 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
-            animation-delay: var(--delay, 0s);
-        }
-
-        .app-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: var(--accent);
-            border-bottom: 4px solid #000000;
-            z-index: 1;
-        }
-
-        .app-card::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.14) 1.5px, transparent 1.5px);
-            background-size: 14px 14px;
-            opacity: 0.35;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .app-card > * {
-            position: relative;
-            z-index: 2;
-        }
-
-        .app-card:hover,
-        .app-card:focus-visible {
-            transform: translateY(-12px) rotate(0deg) scale(1.03);
-            box-shadow: 14px 14px 0px var(--accent), 0 0 32px rgba(226, 192, 68, 0.18);
-            border-color: var(--accent);
-            outline: none;
-        }
-
-        .app-card:focus-visible {
-            outline: 4px dashed #ffffff;
-            outline-offset: 5px;
-        }
-
-        .app-number {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(2.6rem, 4vw, 4rem);
-            line-height: 1;
-            color: transparent;
-            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.35);
-            transform: rotate(8deg);
-            transition: all 0.3s ease;
-            z-index: 2;
-        }
-
-        .app-card:hover .app-number,
-        .app-card:focus-visible .app-number {
-            color: var(--accent);
-            -webkit-text-stroke: 2px #000000;
-            text-shadow: 3px 3px 0px #000000;
-        }
-
-        .app-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: clamp(64px, 6vw, 84px);
-            height: clamp(64px, 6vw, 84px);
-            margin-top: 8px;
-            background: var(--accent);
-            border: 4px solid #000000;
-            border-radius: 50%;
-            box-shadow: 4px 4px 0px #000000;
-            flex-shrink: 0;
-            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .app-icon svg {
-            width: 64%;
-            height: 64%;
-            overflow: visible;
-        }
-
-        .app-card:hover .app-icon,
-        .app-card:focus-visible .app-icon {
-            transform: rotate(-8deg) scale(1.08);
-        }
-
-        .app-name {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1.8rem, 2.4vw, 2.5rem);
-            letter-spacing: 2px;
-            line-height: 1;
-            color: #ffffff;
-            -webkit-text-stroke: 1px #000000;
-            paint-order: stroke fill;
-            text-shadow: 3px 3px 0px var(--accent);
-            margin-top: 2px;
-        }
-
-        .app-desc {
-            font-family: 'Open Sans', sans-serif;
-            font-size: clamp(0.82rem, 1vw, 0.95rem);
-            line-height: 1.55;
-            color: #cfcfcf;
-            flex: 1 1 auto;
-        }
-
-        .app-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 8px;
-            padding: 9px 18px;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1rem, 1.3vw, 1.2rem);
-            letter-spacing: 2px;
-            color: #000000;
-            background: var(--accent);
-            border: 3px solid #000000;
-            box-shadow: 4px 4px 0px #ffffff;
-            transition: all 0.2s ease;
-        }
-
-        .app-card:hover .app-cta,
-        .app-card:focus-visible .app-cta {
-            background: #ffffff;
-            box-shadow: 4px 4px 0px var(--accent);
-            transform: translateX(4px);
-        }
-
-        .applications-note {
-            position: relative;
-            z-index: 3;
-            margin-top: clamp(30px, 4vw, 50px);
-            text-align: center;
-            font-family: 'Caveat', cursive;
-            font-weight: 700;
-            font-size: clamp(1rem, 1.6vw, 1.35rem);
-            color: #9a9a9a;
-            transform: rotate(-1deg);
-        }
-
-        .committees-section {
-            position: relative;
-            width: 100%;
-            padding: clamp(70px, 9vw, 140px) clamp(16px, 4vw, 60px);
-            background-color: #101a2b;
-            background-image:
-                repeating-linear-gradient(135deg, rgba(46, 196, 182, 0.11) 0 14px, transparent 14px 34px),
-                repeating-linear-gradient(45deg, rgba(226, 192, 68, 0.06) 0 2px, transparent 2px 28px);
-            background-size: 68px 68px, 56px 56px;
-            border-top: 6px solid #000000;
-            overflow: hidden;
-            isolation: isolate;
-            scroll-margin-top: 76px;
-            animation: committeeBgDrift 26s linear infinite;
-        }
-
-        .committees-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 16px;
-            background: repeating-linear-gradient(90deg, #2EC4B6 0 34px, #101a2b 34px 68px);
-            z-index: 4;
-        }
-
-        .committees-section::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, transparent 30%, transparent 70%, rgba(0, 0, 0, 0.28) 100%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .committee-bubbles {
-            position: absolute;
-            inset: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .committee-bubble {
-            position: absolute;
-            left: var(--x);
-            top: var(--y);
-            padding: 8px 16px;
-            background: rgba(8, 12, 20, 0.82);
-            color: var(--bubble);
-            border: 3px solid var(--bubble);
-            border-radius: 18px 18px 18px 4px;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(0.75rem, 1.2vw, 1rem);
-            letter-spacing: 2px;
-            transform: rotate(var(--tilt));
-            opacity: 0.5;
-            animation: committeeBubbleFloat var(--dur) ease-in-out infinite alternate;
-            animation-delay: var(--delay);
-        }
-
-        .committee-bubble::after {
-            content: "";
-            position: absolute;
-            left: 14px;
-            bottom: -10px;
-            width: 12px;
-            height: 12px;
-            background: rgba(8, 12, 20, 0.82);
-            border-right: 3px solid var(--bubble);
-            border-bottom: 3px solid var(--bubble);
-            transform: rotate(45deg);
-        }
-
-        @keyframes committeeBgDrift {
-            from {
-                background-position: 0 0, 0 0;
-            }
-            to {
-                background-position: 68px 68px, 56px 56px;
-            }
-        }
-
-        @keyframes committeeBubbleFloat {
-            from {
-                transform: translate3d(0, 0, 0) rotate(var(--tilt));
-            }
-            to {
-                transform: translate3d(12px, -28px, 0) rotate(calc(var(--tilt) + 6deg));
-            }
-        }
-
-        .committee-grid {
-            position: relative;
-            z-index: 3;
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: clamp(18px, 2.2vw, 30px);
-            max-width: 1320px;
-            margin: clamp(35px, 5vw, 65px) auto 0;
-        }
-
-        .committee-card {
-            --accent: #E2C044;
-            --tilt: 0deg;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            min-height: 100%;
-            background: linear-gradient(160deg, #202020 0%, #070707 100%);
-            border: 5px solid #ffffff;
-            box-shadow: 9px 9px 0px var(--accent);
-            transform: rotate(var(--tilt));
-            overflow: hidden;
-            opacity: 1;
-            transition: transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.28s ease, border-color 0.28s ease;
-        }
-
-        .committees-section:not(.in-view) .committee-card {
-            opacity: 0;
-            transform: translateY(50px) rotate(var(--tilt));
-        }
-
-        .committees-section.in-view .committee-card {
-            animation: cardSlam 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
-            animation-delay: var(--delay, 0s);
-        }
-
-        .committee-card:hover,
-        .committee-card:focus-within {
-            transform: translateY(-10px) rotate(0deg) scale(1.02);
-            box-shadow: 14px 14px 0px var(--accent), 0 0 32px rgba(226, 192, 68, 0.18);
-            border-color: var(--accent);
-        }
-
-        .committee-photo {
-            position: relative;
-            aspect-ratio: 16 / 10;
-            overflow: hidden;
-            background: #0b0b0b;
-            border-bottom: 5px solid #000000;
-        }
-
-        .committee-photo img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(0.85) contrast(1.05);
-            transition: transform 0.35s ease;
-        }
-
-        .committee-photo.logo img {
-            object-fit: contain;
-            padding: 18px;
-            background: radial-gradient(circle at 50% 40%, #262626 0%, #080808 75%);
-            filter: none;
-        }
-
-        .committee-card:hover .committee-photo img {
-            transform: scale(1.07) rotate(-1deg);
-        }
-
-        .committee-photo::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.22) 1px, transparent 1.4px);
-            background-size: 9px 9px;
-            opacity: 0.28;
-            pointer-events: none;
-        }
-
-        .committee-photo-fallback {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            background:
-                repeating-linear-gradient(135deg, rgba(226, 192, 68, 0.22) 0 12px, transparent 12px 24px),
-                linear-gradient(135deg, #2a2a2a, #0a0a0a);
-            font-family: 'Bangers', cursive;
-            font-size: clamp(2.8rem, 5vw, 4.5rem);
-            letter-spacing: 4px;
-            color: #E2C044;
-            -webkit-text-stroke: 3px #000000;
-            paint-order: stroke fill;
-            text-shadow: 4px 4px 0px #000000;
-        }
-
-        .committee-tag {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            z-index: 2;
-            padding: 4px 10px;
-            background: var(--accent);
-            color: #000000;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(0.7rem, 0.9vw, 0.85rem);
-            letter-spacing: 2px;
-            border: 3px solid #000000;
-            box-shadow: 3px 3px 0px #000000;
-            transform: rotate(-3deg);
-        }
-
-        .committee-number {
-            position: absolute;
-            top: 8px;
-            right: 12px;
-            z-index: 2;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(2rem, 3vw, 3rem);
-            line-height: 1;
-            color: transparent;
-            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
-            transform: rotate(8deg);
-        }
-
-        .committee-body {
-            display: flex;
-            flex: 1 1 auto;
-            flex-direction: column;
-            gap: 8px;
-            padding: clamp(16px, 1.8vw, 24px);
-        }
-
-        .committee-abbr {
-            align-self: flex-start;
-            padding: 2px 10px;
-            background: var(--accent);
-            color: #000000;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(0.95rem, 1.1vw, 1.15rem);
-            letter-spacing: 2px;
-            border: 3px solid #000000;
-            box-shadow: 3px 3px 0px #000000;
-            transform: rotate(-2deg);
-        }
-
-        .committee-name {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1.2rem, 1.5vw, 1.55rem);
-            line-height: 1.05;
-            letter-spacing: 1px;
-            color: #ffffff;
-            -webkit-text-stroke: 1px #000000;
-            paint-order: stroke fill;
-            text-shadow: 3px 3px 0px var(--accent);
-        }
-
-        .committee-desc {
-            font-family: 'Open Sans', sans-serif;
-            font-size: clamp(0.75rem, 0.9vw, 0.86rem);
-            line-height: 1.55;
-            color: #cfcfcf;
-        }
-
-        .hero-countdown-wrap {
-            position: relative;
-            display: flex;
-            flex: 1 1 auto;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            margin: clamp(10px, 2vw, 24px) 0;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s;
-        }
-
-        .hero-countdown-wrap.show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .hero-countdown-wrap.show::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: min(620px, 92vw);
-            height: min(620px, 92vw);
-            background: radial-gradient(circle, rgba(226, 192, 68, 0.22) 0%, transparent 65%);
-            transform: translate(-50%, -50%) scale(0.3);
-            animation: countdownFlash 0.9s ease-out forwards;
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .countdown {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: clamp(10px, 1.4vw, 18px);
-            max-width: 100%;
-        }
-
-        .countdown-tag {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1rem, 1.5vw, 1.35rem);
-            letter-spacing: 4px;
-            color: #E2C044;
-            background: #000000;
-            border: 4px solid #E2C044;
-            padding: 6px clamp(18px, 2.4vw, 30px);
-            transform: rotate(-2deg);
-            box-shadow: 5px 5px 0px #E2C044;
-        }
-
-        .countdown-grid {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: clamp(10px, 1.6vw, 22px);
-            width: 100%;
-        }
-
-        .countdown-box {
-            --box-tilt: -1.5deg;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-width: clamp(60px, 9.5vw, 128px);
-            padding: clamp(10px, 1.5vw, 20px) clamp(10px, 1.8vw, 24px);
-            background: #000000;
-            border: 5px solid #ffffff;
-            box-shadow: 7px 7px 0px #E2C044;
-            transform: rotate(var(--box-tilt));
-        }
-
-        .countdown-box:nth-child(even) {
-            --box-tilt: 1.5deg;
-        }
-
-        .countdown-value {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(2.4rem, 5.5vw, 5rem);
-            line-height: 1;
-            letter-spacing: 3px;
-            color: #E2C044;
-            -webkit-text-stroke: 1px #000000;
-            text-shadow: 4px 4px 0px #000000;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .countdown-label {
-            margin-top: 4px;
-            font-family: 'Open Sans', sans-serif;
-            font-weight: 800;
-            font-size: clamp(0.58rem, 0.85vw, 0.8rem);
-            letter-spacing: 3px;
-            color: #cfcfcf;
-        }
-
-        .hero-countdown-wrap.show .countdown-tag {
-            animation: countdownTagPop 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
-        }
-
-        .hero-countdown-wrap.show .countdown-box {
-            animation: countdownSlam 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275) backwards;
-        }
-
-        .hero-countdown-wrap.show .countdown-box:nth-child(1) {
-            animation-delay: 0.1s;
-        }
-
-        .hero-countdown-wrap.show .countdown-box:nth-child(2) {
-            animation-delay: 0.22s;
-        }
-
-        .hero-countdown-wrap.show .countdown-box:nth-child(3) {
-            animation-delay: 0.34s;
-        }
-
-        .hero-countdown-wrap.show .countdown-box:nth-child(4) {
-            animation-delay: 0.46s;
-        }
-
-        @keyframes countdownFlash {
-            0% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(0.3);
-            }
-            35% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-50%, -50%) scale(1.25);
-            }
-        }
-
-        @keyframes countdownTagPop {
-            0% {
-                opacity: 0;
-                transform: rotate(-2deg) scale(0.4);
-            }
-            70% {
-                opacity: 1;
-                transform: rotate(2deg) scale(1.12);
-            }
-            100% {
-                opacity: 1;
-                transform: rotate(-2deg) scale(1);
-            }
-        }
-
-        @keyframes countdownSlam {
-            0% {
-                opacity: 0;
-                transform: translateY(-70px) scale(2.1) rotate(-14deg);
-                filter: blur(5px);
-            }
-            60% {
-                opacity: 1;
-                transform: translateY(6px) scale(0.94) rotate(var(--box-tilt));
-                filter: blur(0);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1) rotate(var(--box-tilt));
-                filter: blur(0);
-            }
-        }
-
-        .site-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 300;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 18px;
-            padding: 10px clamp(16px, 4vw, 54px);
-            background: rgba(6, 6, 6, 0.94);
-            border-bottom: 4px solid #000000;
-            box-shadow: 0 5px 0px rgba(226, 192, 68, 0.85);
-            backdrop-filter: blur(10px);
-            animation: navDrop 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
-        }
-
-        .site-nav.scrolled {
-            background: rgba(6, 6, 6, 0.99);
-            box-shadow: 0 5px 0px #E2C044, 0 12px 30px rgba(0, 0, 0, 0.55);
-        }
-
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #ffffff;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .nav-logo {
-            width: clamp(34px, 4vw, 46px);
-            height: clamp(34px, 4vw, 46px);
-            padding: 3px;
-            background: #000000;
-            border: 3px solid #E2C044;
-            border-radius: 50%;
-            object-fit: contain;
-            box-shadow: 3px 3px 0px #000000;
-            transform: rotate(-6deg);
-            transition: transform 0.25s ease;
-        }
-
-        .nav-brand:hover .nav-logo {
-            transform: rotate(6deg) scale(1.06);
-        }
-
-        .nav-brand-text {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1.15rem, 1.8vw, 1.6rem);
-            letter-spacing: 2px;
-            line-height: 1;
-            white-space: nowrap;
-        }
-
-        .nav-brand-text span {
-            color: #E2C044;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          max-width: 1000px;
+        }
+      }
+
+      .app-card {
+        --accent: #e2c044;
+        --tilt: 0deg;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        min-height: 100%;
+        padding: clamp(20px, 2vw, 28px);
+        padding-top: clamp(28px, 2.6vw, 38px);
+        background: linear-gradient(160deg, #202020 0%, #070707 100%);
+        border: 5px solid #ffffff;
+        box-shadow: 9px 9px 0px var(--accent);
+        transform: rotate(var(--tilt));
+        text-decoration: none;
+        color: #ffffff;
+        overflow: hidden;
+        opacity: 1;
+        transition:
+          transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+
+      .applications-section:not(.in-view) .app-card {
+        opacity: 0;
+        transform: translateY(50px) rotate(var(--tilt));
+      }
+
+      .applications-section.in-view .app-card {
+        animation: cardSlam 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          backwards;
+        animation-delay: var(--delay, 0s);
+      }
+
+      .app-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background: var(--accent);
+        border-bottom: 4px solid #000000;
+        z-index: 1;
+      }
+
+      .app-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.14) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 14px 14px;
+        opacity: 0.35;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .app-card > * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .app-card:hover,
+      .app-card:focus-visible {
+        transform: translateY(-12px) rotate(0deg) scale(1.03);
+        box-shadow:
+          14px 14px 0px var(--accent),
+          0 0 32px rgba(226, 192, 68, 0.18);
+        border-color: var(--accent);
+        outline: none;
+      }
+
+      .app-card:focus-visible {
+        outline: 4px dashed #ffffff;
+        outline-offset: 5px;
+      }
+
+      .app-number {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        font-family: "Bangers", cursive;
+        font-size: clamp(2.6rem, 4vw, 4rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 2px rgba(255, 255, 255, 0.35);
+        transform: rotate(8deg);
+        transition: all 0.3s ease;
+        z-index: 2;
+      }
+
+      .app-card:hover .app-number,
+      .app-card:focus-visible .app-number {
+        color: var(--accent);
+        -webkit-text-stroke: 2px #000000;
+        text-shadow: 3px 3px 0px #000000;
+      }
+
+      .app-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(64px, 6vw, 84px);
+        height: clamp(64px, 6vw, 84px);
+        margin-top: 8px;
+        background: var(--accent);
+        border: 4px solid #000000;
+        border-radius: 50%;
+        box-shadow: 4px 4px 0px #000000;
+        flex-shrink: 0;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      .app-icon svg {
+        width: 64%;
+        height: 64%;
+        overflow: visible;
+      }
+
+      .app-card:hover .app-icon,
+      .app-card:focus-visible .app-icon {
+        transform: rotate(-8deg) scale(1.08);
+      }
+
+      .app-name {
+        font-family: "Bangers", cursive;
+        font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+        letter-spacing: 2px;
+        line-height: 1;
+        color: #ffffff;
+        -webkit-text-stroke: 1px #000000;
+        paint-order: stroke fill;
+        text-shadow: 3px 3px 0px var(--accent);
+        margin-top: 2px;
+      }
+
+      .app-desc {
+        font-family: "Open Sans", sans-serif;
+        font-size: clamp(0.82rem, 1vw, 0.95rem);
+        line-height: 1.55;
+        color: #cfcfcf;
+        flex: 1 1 auto;
+      }
+
+      .app-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        padding: 9px 18px;
+        font-family: "Bangers", cursive;
+        font-size: clamp(1rem, 1.3vw, 1.2rem);
+        letter-spacing: 2px;
+        color: #000000;
+        background: var(--accent);
+        border: 3px solid #000000;
+        box-shadow: 4px 4px 0px #ffffff;
+        transition: all 0.2s ease;
+      }
+
+      .app-card:hover .app-cta,
+      .app-card:focus-visible .app-cta {
+        background: #ffffff;
+        box-shadow: 4px 4px 0px var(--accent);
+        transform: translateX(4px);
+      }
+
+      .applications-note {
+        position: relative;
+        z-index: 3;
+        margin-top: clamp(30px, 4vw, 50px);
+        text-align: center;
+        font-family: "Caveat", cursive;
+        font-weight: 700;
+        font-size: clamp(1rem, 1.6vw, 1.35rem);
+        color: #9a9a9a;
+        transform: rotate(-1deg);
+      }
+
+      .committees-section {
+        position: relative;
+        width: 100%;
+        padding: clamp(70px, 9vw, 140px) clamp(16px, 4vw, 60px);
+        background-color: #101a2b;
+        background-image:
+          repeating-linear-gradient(
+            135deg,
+            rgba(46, 196, 182, 0.11) 0 14px,
+            transparent 14px 34px
+          ),
+          repeating-linear-gradient(
+            45deg,
+            rgba(226, 192, 68, 0.06) 0 2px,
+            transparent 2px 28px
+          );
+        background-size:
+          68px 68px,
+          56px 56px;
+        border-top: 6px solid #000000;
+        overflow: hidden;
+        isolation: isolate;
+        scroll-margin-top: 76px;
+        animation: committeeBgDrift 26s linear infinite;
+      }
+
+      .committees-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 16px;
+        background: repeating-linear-gradient(
+          90deg,
+          #2ec4b6 0 34px,
+          #101a2b 34px 68px
+        );
+        z-index: 4;
+      }
+
+      .committees-section::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.18) 0%,
+          transparent 30%,
+          transparent 70%,
+          rgba(0, 0, 0, 0.28) 100%
+        );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .committee-bubbles {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .committee-bubble {
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        padding: 8px 16px;
+        background: rgba(8, 12, 20, 0.82);
+        color: var(--bubble);
+        border: 3px solid var(--bubble);
+        border-radius: 18px 18px 18px 4px;
+        font-family: "Bangers", cursive;
+        font-size: clamp(0.75rem, 1.2vw, 1rem);
+        letter-spacing: 2px;
+        transform: rotate(var(--tilt));
+        opacity: 0.5;
+        animation: committeeBubbleFloat var(--dur) ease-in-out infinite
+          alternate;
+        animation-delay: var(--delay);
+      }
+
+      .committee-bubble::after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        bottom: -10px;
+        width: 12px;
+        height: 12px;
+        background: rgba(8, 12, 20, 0.82);
+        border-right: 3px solid var(--bubble);
+        border-bottom: 3px solid var(--bubble);
+        transform: rotate(45deg);
+      }
+
+      @keyframes committeeBgDrift {
+        from {
+          background-position:
+            0 0,
+            0 0;
+        }
+        to {
+          background-position:
+            68px 68px,
+            56px 56px;
+        }
+      }
+
+      @keyframes committeeBubbleFloat {
+        from {
+          transform: translate3d(0, 0, 0) rotate(var(--tilt));
+        }
+        to {
+          transform: translate3d(12px, -28px, 0)
+            rotate(calc(var(--tilt) + 6deg));
+        }
+      }
+
+      .committee-grid {
+        position: relative;
+        z-index: 3;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(18px, 2.2vw, 30px);
+        max-width: 1320px;
+        margin: clamp(35px, 5vw, 65px) auto 0;
+      }
+
+      .committee-card {
+        --accent: #e2c044;
+        --tilt: 0deg;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        background: linear-gradient(160deg, #202020 0%, #070707 100%);
+        border: 5px solid #ffffff;
+        box-shadow: 9px 9px 0px var(--accent);
+        transform: rotate(var(--tilt));
+        overflow: hidden;
+        opacity: 1;
+        transition:
+          transform 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          box-shadow 0.28s ease,
+          border-color 0.28s ease;
+      }
+
+      .committees-section:not(.in-view) .committee-card {
+        opacity: 0;
+        transform: translateY(50px) rotate(var(--tilt));
+      }
+
+      .committees-section.in-view .committee-card {
+        animation: cardSlam 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          backwards;
+        animation-delay: var(--delay, 0s);
+      }
+
+      .committee-card:hover,
+      .committee-card:focus-within {
+        transform: translateY(-10px) rotate(0deg) scale(1.02);
+        box-shadow:
+          14px 14px 0px var(--accent),
+          0 0 32px rgba(226, 192, 68, 0.18);
+        border-color: var(--accent);
+      }
+
+      .committee-photo {
+        position: relative;
+        aspect-ratio: 16 / 10;
+        overflow: hidden;
+        background: #0b0b0b;
+        border-bottom: 5px solid #000000;
+      }
+
+      .committee-photo img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: saturate(0.85) contrast(1.05);
+        transition: transform 0.35s ease;
+      }
+
+      .committee-photo.logo img {
+        object-fit: contain;
+        padding: 18px;
+        background: radial-gradient(circle at 50% 40%, #262626 0%, #080808 75%);
+        filter: none;
+      }
+
+      .committee-card:hover .committee-photo img {
+        transform: scale(1.07) rotate(-1deg);
+      }
+
+      .committee-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.22) 1px,
+          transparent 1.4px
+        );
+        background-size: 9px 9px;
+        opacity: 0.28;
+        pointer-events: none;
+      }
+
+      .committee-photo-fallback {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background:
+          repeating-linear-gradient(
+            135deg,
+            rgba(226, 192, 68, 0.22) 0 12px,
+            transparent 12px 24px
+          ),
+          linear-gradient(135deg, #2a2a2a, #0a0a0a);
+        font-family: "Bangers", cursive;
+        font-size: clamp(2.8rem, 5vw, 4.5rem);
+        letter-spacing: 4px;
+        color: #e2c044;
+        -webkit-text-stroke: 3px #000000;
+        paint-order: stroke fill;
+        text-shadow: 4px 4px 0px #000000;
+      }
+
+      .committee-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        z-index: 2;
+        padding: 4px 10px;
+        background: var(--accent);
+        color: #000000;
+        font-family: "Bangers", cursive;
+        font-size: clamp(0.7rem, 0.9vw, 0.85rem);
+        letter-spacing: 2px;
+        border: 3px solid #000000;
+        box-shadow: 3px 3px 0px #000000;
+        transform: rotate(-3deg);
+      }
+
+      .committee-number {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        z-index: 2;
+        font-family: "Bangers", cursive;
+        font-size: clamp(2rem, 3vw, 3rem);
+        line-height: 1;
+        color: transparent;
+        -webkit-text-stroke: 2px rgba(255, 255, 255, 0.6);
+        transform: rotate(8deg);
+      }
+
+      .committee-body {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        gap: 8px;
+        padding: clamp(16px, 1.8vw, 24px);
+      }
+
+      .committee-abbr {
+        align-self: flex-start;
+        padding: 2px 10px;
+        background: var(--accent);
+        color: #000000;
+        font-family: "Bangers", cursive;
+        font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+        letter-spacing: 2px;
+        border: 3px solid #000000;
+        box-shadow: 3px 3px 0px #000000;
+        transform: rotate(-2deg);
+      }
+
+      .committee-name {
+        font-family: "Bangers", cursive;
+        font-size: clamp(1.2rem, 1.5vw, 1.55rem);
+        line-height: 1.05;
+        letter-spacing: 1px;
+        color: #ffffff;
+        -webkit-text-stroke: 1px #000000;
+        paint-order: stroke fill;
+        text-shadow: 3px 3px 0px var(--accent);
+      }
+
+      .committee-desc {
+        font-family: "Open Sans", sans-serif;
+        font-size: clamp(0.75rem, 0.9vw, 0.86rem);
+        line-height: 1.55;
+        color: #cfcfcf;
+      }
+
+      .hero-countdown-wrap {
+        position: relative;
+        display: flex;
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin: clamp(10px, 2vw, 24px) 0;
+        opacity: 0;
+        transform: translateY(20px);
+        transition:
+          opacity 0.6s ease-out 0.1s,
+          transform 0.6s ease-out 0.1s;
+      }
+
+      .hero-countdown-wrap.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .hero-countdown-wrap.show::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: min(620px, 92vw);
+        height: min(620px, 92vw);
+        background: radial-gradient(
+          circle,
+          rgba(226, 192, 68, 0.22) 0%,
+          transparent 65%
+        );
+        transform: translate(-50%, -50%) scale(0.3);
+        animation: countdownFlash 0.9s ease-out forwards;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .countdown {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(10px, 1.4vw, 18px);
+        max-width: 100%;
+      }
+
+      .countdown-tag {
+        font-family: "Bangers", cursive;
+        font-size: clamp(1rem, 1.5vw, 1.35rem);
+        letter-spacing: 4px;
+        color: #e2c044;
+        background: #000000;
+        border: 4px solid #e2c044;
+        padding: 6px clamp(18px, 2.4vw, 30px);
+        transform: rotate(-2deg);
+        box-shadow: 5px 5px 0px #e2c044;
+      }
+
+      .countdown-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: clamp(10px, 1.6vw, 22px);
+        width: 100%;
+      }
+
+      .countdown-box {
+        --box-tilt: -1.5deg;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: clamp(60px, 9.5vw, 128px);
+        padding: clamp(10px, 1.5vw, 20px) clamp(10px, 1.8vw, 24px);
+        background: #000000;
+        border: 5px solid #ffffff;
+        box-shadow: 7px 7px 0px #e2c044;
+        transform: rotate(var(--box-tilt));
+      }
+
+      .countdown-box:nth-child(even) {
+        --box-tilt: 1.5deg;
+      }
+
+      .countdown-value {
+        font-family: "Bangers", cursive;
+        font-size: clamp(2.4rem, 5.5vw, 5rem);
+        line-height: 1;
+        letter-spacing: 3px;
+        color: #e2c044;
+        -webkit-text-stroke: 1px #000000;
+        text-shadow: 4px 4px 0px #000000;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .countdown-label {
+        margin-top: 4px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 800;
+        font-size: clamp(0.58rem, 0.85vw, 0.8rem);
+        letter-spacing: 3px;
+        color: #cfcfcf;
+      }
+
+      .hero-countdown-wrap.show .countdown-tag {
+        animation: countdownTagPop 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          backwards;
+      }
+
+      .hero-countdown-wrap.show .countdown-box {
+        animation: countdownSlam 0.65s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+          backwards;
+      }
+
+      .hero-countdown-wrap.show .countdown-box:nth-child(1) {
+        animation-delay: 0.1s;
+      }
+
+      .hero-countdown-wrap.show .countdown-box:nth-child(2) {
+        animation-delay: 0.22s;
+      }
+
+      .hero-countdown-wrap.show .countdown-box:nth-child(3) {
+        animation-delay: 0.34s;
+      }
+
+      .hero-countdown-wrap.show .countdown-box:nth-child(4) {
+        animation-delay: 0.46s;
+      }
+
+      @keyframes countdownFlash {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.3);
+        }
+        35% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(1.25);
+        }
+      }
+
+      @keyframes countdownTagPop {
+        0% {
+          opacity: 0;
+          transform: rotate(-2deg) scale(0.4);
+        }
+        70% {
+          opacity: 1;
+          transform: rotate(2deg) scale(1.12);
+        }
+        100% {
+          opacity: 1;
+          transform: rotate(-2deg) scale(1);
+        }
+      }
+
+      @keyframes countdownSlam {
+        0% {
+          opacity: 0;
+          transform: translateY(-70px) scale(2.1) rotate(-14deg);
+          filter: blur(5px);
+        }
+        60% {
+          opacity: 1;
+          transform: translateY(6px) scale(0.94) rotate(var(--box-tilt));
+          filter: blur(0);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotate(var(--box-tilt));
+          filter: blur(0);
+        }
+      }
+
+      .site-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 300;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 10px clamp(16px, 4vw, 54px);
+        background: rgba(6, 6, 6, 0.94);
+        border-bottom: 4px solid #000000;
+        box-shadow: 0 5px 0px rgba(226, 192, 68, 0.85);
+        backdrop-filter: blur(10px);
+        animation: navDrop 0.55s cubic-bezier(0.175, 0.885, 0.32, 1.275) both;
+      }
+
+      .site-nav.scrolled {
+        background: rgba(6, 6, 6, 0.99);
+        box-shadow:
+          0 5px 0px #e2c044,
+          0 12px 30px rgba(0, 0, 0, 0.55);
+      }
+
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ffffff;
+        text-decoration: none;
+        flex-shrink: 0;
+      }
+
+      .nav-logo {
+        width: clamp(34px, 4vw, 46px);
+        height: clamp(34px, 4vw, 46px);
+        padding: 3px;
+        background: #000000;
+        border: 3px solid #e2c044;
+        border-radius: 50%;
+        object-fit: contain;
+        box-shadow: 3px 3px 0px #000000;
+        transform: rotate(-6deg);
+        transition: transform 0.25s ease;
+      }
+
+      .nav-brand:hover .nav-logo {
+        transform: rotate(6deg) scale(1.06);
+      }
+
+      .nav-brand-text {
+        font-family: "Bangers", cursive;
+        font-size: clamp(1.15rem, 1.8vw, 1.6rem);
+        letter-spacing: 2px;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .nav-brand-text span {
+        color: #e2c044;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 2vw, 30px);
+      }
+
+      .nav-links a {
+        position: relative;
+        padding: 6px 2px;
+        font-family: "Bangers", cursive;
+        font-size: clamp(0.95rem, 1.2vw, 1.15rem);
+        letter-spacing: 2px;
+        color: #ffffff;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3px;
+        background: #e2c044;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s ease;
+      }
+
+      .nav-links a:hover {
+        color: #e2c044;
+      }
+
+      .nav-links a:hover::after {
+        transform: scaleX(1);
+      }
+
+      .nav-links .nav-cta {
+        padding: 8px 18px;
+        color: #000000;
+        background: #e2c044;
+        border: 3px solid #000000;
+        box-shadow: 4px 4px 0px #000000;
+        transform: rotate(-2deg);
+        transition: all 0.2s ease;
+      }
+
+      .nav-links .nav-cta::after {
+        display: none;
+      }
+
+      .nav-links .nav-cta:hover {
+        color: #000000;
+        background: #ffffff;
+        transform: rotate(1deg) translateY(-2px);
+        box-shadow: 5px 5px 0px #e2c044;
+      }
+
+      .nav-toggle {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 44px;
+        height: 40px;
+        padding: 6px;
+        background: #000000;
+        border: 3px solid #e2c044;
+        box-shadow: 3px 3px 0px #000000;
+        cursor: pointer;
+      }
+
+      .nav-toggle span {
+        display: block;
+        width: 100%;
+        height: 4px;
+        background: #e2c044;
+        transition:
+          transform 0.25s ease,
+          opacity 0.2s ease;
+      }
+
+      .nav-toggle.open span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+      }
+
+      .nav-toggle.open span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .nav-toggle.open span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+      }
+
+      @keyframes navDrop {
+        from {
+          transform: translateY(-110%);
+        }
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .site-footer {
+        position: relative;
+        padding: clamp(38px, 5vw, 64px) clamp(16px, 4vw, 60px)
+          clamp(24px, 3vw, 38px);
+        background: #050505;
+        border-top: 6px solid #000000;
+        overflow: hidden;
+      }
+
+      .site-footer::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: repeating-linear-gradient(
+          90deg,
+          #e2c044 0 34px,
+          #000000 34px 68px
+        );
+      }
+
+      .site-footer::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.06) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 20px 20px;
+        opacity: 0.5;
+        pointer-events: none;
+      }
+
+      .footer-inner {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: clamp(20px, 4vw, 50px);
+        max-width: 1320px;
+        margin: 0 auto;
+      }
+
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+
+      .footer-logo {
+        width: clamp(50px, 6vw, 68px);
+        height: clamp(50px, 6vw, 68px);
+        padding: 4px;
+        background: #000000;
+        border: 4px solid #e2c044;
+        border-radius: 50%;
+        object-fit: contain;
+        box-shadow: 4px 4px 0px #000000;
+        transform: rotate(-6deg);
+        flex-shrink: 0;
+      }
+
+      .footer-brand-text {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .footer-title {
+        font-family: "Bangers", cursive;
+        font-size: clamp(1.4rem, 2.2vw, 2rem);
+        line-height: 1;
+        letter-spacing: 2px;
+        color: #ffffff;
+        -webkit-text-stroke: 1px #000000;
+        paint-order: stroke fill;
+        text-shadow: 2px 2px 0px #e2c044;
+      }
+
+      .footer-sub {
+        font-family: "Open Sans", sans-serif;
+        font-size: clamp(0.55rem, 0.75vw, 0.68rem);
+        letter-spacing: 3px;
+        color: #8f8f8f;
+      }
+
+      .footer-credit {
+        font-family: "Caveat", cursive;
+        font-weight: 700;
+        font-size: clamp(1.1rem, 1.7vw, 1.45rem);
+        color: #bdbdbd;
+        white-space: nowrap;
+        transform: rotate(-1.5deg);
+      }
+
+      .footer-credit span {
+        font-family: "Bangers", cursive;
+        letter-spacing: 2px;
+        color: #e2c044;
+        text-shadow: 2px 2px 0px #000000;
+      }
+
+      .footer-bottom {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+        max-width: 1320px;
+        margin: clamp(24px, 4vw, 40px) auto 0;
+        padding-top: 18px;
+        border-top: 2px dashed rgba(255, 255, 255, 0.15);
+        font-family: "Open Sans", sans-serif;
+        font-size: clamp(0.68rem, 0.85vw, 0.78rem);
+        letter-spacing: 0.5px;
+        color: #777777;
+      }
+
+      @media (max-width: 760px) {
+        .nav-toggle {
+          display: flex;
         }
 
         .nav-links {
-            display: flex;
-            align-items: center;
-            gap: clamp(12px, 2vw, 30px);
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+          padding: 16px clamp(16px, 4vw, 54px) 22px;
+          background: rgba(6, 6, 6, 0.98);
+          border-bottom: 4px solid #e2c044;
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
+          opacity: 0;
+          transform: translateY(-14px);
+          pointer-events: none;
+          transition:
+            opacity 0.25s ease,
+            transform 0.25s ease;
+        }
+
+        .nav-links.open {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
         }
 
         .nav-links a {
-            position: relative;
-            padding: 6px 2px;
-            font-family: 'Bangers', cursive;
-            font-size: clamp(0.95rem, 1.2vw, 1.15rem);
-            letter-spacing: 2px;
-            color: #ffffff;
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: 3px;
-            background: #E2C044;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.25s ease;
-        }
-
-        .nav-links a:hover {
-            color: #E2C044;
-        }
-
-        .nav-links a:hover::after {
-            transform: scaleX(1);
+          text-align: center;
+          padding: 10px 0;
         }
 
         .nav-links .nav-cta {
-            padding: 8px 18px;
-            color: #000000;
-            background: #E2C044;
-            border: 3px solid #000000;
-            box-shadow: 4px 4px 0px #000000;
-            transform: rotate(-2deg);
-            transition: all 0.2s ease;
+          margin-top: 6px;
+        }
+      }
+
+      @keyframes cardSlam {
+        0% {
+          opacity: 0;
+          transform: translateY(50px) rotate(calc(var(--tilt) - 4deg))
+            scale(0.9);
+        }
+        70% {
+          opacity: 1;
+          transform: translateY(-8px) rotate(var(--tilt)) scale(1.02);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0) rotate(var(--tilt)) scale(1);
+        }
+      }
+
+      @media (max-width: 1100px) {
+        .application-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          max-width: 780px;
         }
 
-        .nav-links .nav-cta::after {
-            display: none;
+        .committee-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          max-width: 800px;
+        }
+      }
+
+      @media (max-width: 850px) {
+        .section-sticker {
+          display: none;
         }
 
-        .nav-links .nav-cta:hover {
-            color: #000000;
-            background: #ffffff;
-            transform: rotate(1deg) translateY(-2px);
-            box-shadow: 5px 5px 0px #E2C044;
+        .applications-title {
+          transform: rotate(-1deg);
+        }
+      }
+
+      @media (max-width: 650px) {
+        .application-grid,
+        .committee-grid {
+          grid-template-columns: 1fr;
+          max-width: 430px;
         }
 
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            width: 44px;
-            height: 40px;
-            padding: 6px;
-            background: #000000;
-            border: 3px solid #E2C044;
-            box-shadow: 3px 3px 0px #000000;
-            cursor: pointer;
+        .app-card,
+        .committee-card {
+          transform: rotate(0deg);
         }
 
-        .nav-toggle span {
-            display: block;
-            width: 100%;
-            height: 4px;
-            background: #E2C044;
-            transition: transform 0.25s ease, opacity 0.2s ease;
+        .applications-section:not(.in-view) .app-card,
+        .committees-section:not(.in-view) .committee-card {
+          transform: translateY(50px) rotate(0deg);
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
         }
 
-        .nav-toggle.open span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
+        .committees-section,
+        .committee-bubble {
+          animation: none;
         }
 
-        .nav-toggle.open span:nth-child(2) {
-            opacity: 0;
+        .applications-section.in-view .app-card,
+        .committees-section.in-view .committee-card {
+          animation: none;
+          opacity: 1;
+          transform: rotate(var(--tilt));
         }
 
-        .nav-toggle.open span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
+        .app-card,
+        .app-icon,
+        .app-cta,
+        .app-number,
+        .committee-card,
+        .committee-photo img {
+          transition: none;
+        }
+      }
+
+      @media (max-width: 850px) {
+        .asymmetric-footer {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 15px;
         }
 
-        @keyframes navDrop {
-            from {
-                transform: translateY(-110%);
-            }
-            to {
-                transform: translateY(0);
-            }
+        .cta-btn {
+          width: 100%;
+          text-align: center;
+          transform: rotate(0deg);
         }
 
-        .site-footer {
-            position: relative;
-            padding: clamp(38px, 5vw, 64px) clamp(16px, 4vw, 60px) clamp(24px, 3vw, 38px);
-            background: #050505;
-            border-top: 6px solid #000000;
-            overflow: hidden;
+        .single-line-text {
+          transform: rotate(-2deg);
         }
 
-        .site-footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
-            background: repeating-linear-gradient(90deg, #E2C044 0 34px, #000000 34px 68px);
+        .sub-explode-text {
+          transform: rotate(1deg) translateX(0);
         }
-
-        .site-footer::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1.5px, transparent 1.5px);
-            background-size: 20px 20px;
-            opacity: 0.5;
-            pointer-events: none;
-        }
-
-        .footer-inner {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: clamp(20px, 4vw, 50px);
-            max-width: 1320px;
-            margin: 0 auto;
-        }
-
-        .footer-brand {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .footer-logo {
-            width: clamp(50px, 6vw, 68px);
-            height: clamp(50px, 6vw, 68px);
-            padding: 4px;
-            background: #000000;
-            border: 4px solid #E2C044;
-            border-radius: 50%;
-            object-fit: contain;
-            box-shadow: 4px 4px 0px #000000;
-            transform: rotate(-6deg);
-            flex-shrink: 0;
-        }
-
-        .footer-brand-text {
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-        }
-
-        .footer-title {
-            font-family: 'Bangers', cursive;
-            font-size: clamp(1.4rem, 2.2vw, 2rem);
-            line-height: 1;
-            letter-spacing: 2px;
-            color: #ffffff;
-            -webkit-text-stroke: 1px #000000;
-            paint-order: stroke fill;
-            text-shadow: 2px 2px 0px #E2C044;
-        }
-
-        .footer-sub {
-            font-family: 'Open Sans', sans-serif;
-            font-size: clamp(0.55rem, 0.75vw, 0.68rem);
-            letter-spacing: 3px;
-            color: #8f8f8f;
-        }
-
-        .footer-credit {
-            font-family: 'Caveat', cursive;
-            font-weight: 700;
-            font-size: clamp(1.1rem, 1.7vw, 1.45rem);
-            color: #bdbdbd;
-            white-space: nowrap;
-            transform: rotate(-1.5deg);
-        }
-
-        .footer-credit span {
-            font-family: 'Bangers', cursive;
-            letter-spacing: 2px;
-            color: #E2C044;
-            text-shadow: 2px 2px 0px #000000;
-        }
-
-        .footer-bottom {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 10px;
-            max-width: 1320px;
-            margin: clamp(24px, 4vw, 40px) auto 0;
-            padding-top: 18px;
-            border-top: 2px dashed rgba(255, 255, 255, 0.15);
-            font-family: 'Open Sans', sans-serif;
-            font-size: clamp(0.68rem, 0.85vw, 0.78rem);
-            letter-spacing: 0.5px;
-            color: #777777;
-        }
-
-        @media (max-width: 760px) {
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 10px;
-                padding: 16px clamp(16px, 4vw, 54px) 22px;
-                background: rgba(6, 6, 6, 0.98);
-                border-bottom: 4px solid #E2C044;
-                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55);
-                opacity: 0;
-                transform: translateY(-14px);
-                pointer-events: none;
-                transition: opacity 0.25s ease, transform 0.25s ease;
-            }
-
-            .nav-links.open {
-                opacity: 1;
-                transform: translateY(0);
-                pointer-events: auto;
-            }
-
-            .nav-links a {
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            .nav-links .nav-cta {
-                margin-top: 6px;
-            }
-        }
-
-        @keyframes cardSlam {
-            0% {
-                opacity: 0;
-                transform: translateY(50px) rotate(calc(var(--tilt) - 4deg)) scale(0.9);
-            }
-            70% {
-                opacity: 1;
-                transform: translateY(-8px) rotate(var(--tilt)) scale(1.02);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) rotate(var(--tilt)) scale(1);
-            }
-        }
-
-        @media (max-width: 1100px) {
-            .application-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                max-width: 780px;
-            }
-
-            .committee-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-                max-width: 800px;
-            }
-        }
-
-        @media (max-width: 850px) {
-            .section-sticker {
-                display: none;
-            }
-
-            .applications-title {
-                transform: rotate(-1deg);
-            }
-        }
-
-        @media (max-width: 650px) {
-            .application-grid,
-            .committee-grid {
-                grid-template-columns: 1fr;
-                max-width: 430px;
-            }
-
-            .app-card,
-            .committee-card {
-                transform: rotate(0deg);
-            }
-
-            .applications-section:not(.in-view) .app-card,
-            .committees-section:not(.in-view) .committee-card {
-                transform: translateY(50px) rotate(0deg);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto;
-            }
-
-            .committees-section,
-            .committee-bubble {
-                animation: none;
-            }
-
-            .applications-section.in-view .app-card,
-            .committees-section.in-view .committee-card {
-                animation: none;
-                opacity: 1;
-                transform: rotate(var(--tilt));
-            }
-
-            .app-card,
-            .app-icon,
-            .app-cta,
-            .app-number,
-            .committee-card,
-            .committee-photo img {
-                transition: none;
-            }
-        }
-
-        @media (max-width: 850px) {
-            .asymmetric-footer {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 15px;
-            }
-
-            .cta-btn {
-                width: 100%;
-                text-align: center;
-                transform: rotate(0deg);
-            }
-
-            .single-line-text {
-                transform: rotate(-2deg);
-            }
-
-            .sub-explode-text {
-                transform: rotate(1deg) translateX(0);
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div id="root"></div>
 
     <script type="text/babel">
-        const logoUrl = "logo.jpg";
+      const logoUrl = "logo.jpg";
 
-        const SmokeCloudSVG = ({ color = "#FFFFFF" }) => (
-            <svg viewBox="0 0 200 200" width="100%" height="100%">
-                <path
-                    fill={color}
-                    stroke="#000000"
-                    strokeWidth="6"
-                    strokeLinejoin="round"
-                    d="M 50 130
+      const SmokeCloudSVG = ({ color = "#FFFFFF" }) => (
+        <svg viewBox="0 0 200 200" width="100%" height="100%">
+          <path
+            fill={color}
+            stroke="#000000"
+            strokeWidth="6"
+            strokeLinejoin="round"
+            d="M 50 130
                        C 20 130, 10 100, 30 80
                        C 20 50, 50 30, 80 40
                        C 100 10, 140 20, 150 50
@@ -1647,892 +1810,1153 @@
                        C 195 120, 180 150, 150 150
                        C 130 165, 90 165, 70 145
                        Z"
+          />
+        </svg>
+      );
+
+      const PunchPopSVG = ({ text = "POW!" }) => (
+        <svg viewBox="0 0 120 120" width="130" height="130">
+          <path
+            fill="#E2C044"
+            stroke="#000000"
+            strokeWidth="5"
+            d="M 60 10 L 75 35 L 105 25 L 90 55 L 115 75 L 85 85 L 80 115 L 55 95 L 30 110 L 35 80 L 10 70 L 30 50 L 15 25 L 45 35 Z"
+          />
+          <text
+            x="50%"
+            y="54%"
+            dominantBaseline="middle"
+            textAnchor="middle"
+            fontSize="28"
+            fontFamily="Bangers, sans-serif"
+            fontWeight="bold"
+            fill="#000"
+          >
+            {text}
+          </text>
+        </svg>
+      );
+
+      const FistIconSVG = () => (
+        <svg viewBox="0 0 100 100" width="100" height="100">
+          <path
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="4"
+            d="M20,60 C10,50 15,30 35,25 C45,10 75,15 80,35 C95,40 90,70 75,80 C60,90 30,85 20,60 Z"
+          />
+          <circle cx="40" cy="45" r="5" fill="#000" />
+          <circle cx="60" cy="45" r="5" fill="#000" />
+          <path
+            d="M 35 65 Q 50 75 65 65"
+            stroke="#000"
+            strokeWidth="4"
+            fill="none"
+          />
+        </svg>
+      );
+
+      const SoloIcon = () => (
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <circle
+            cx="50"
+            cy="38"
+            r="16"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+          />
+          <path
+            d="M18 90 C18 66 34 58 50 58 C66 58 82 66 82 90 Z"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M50 8 L54 18 L65 18 L56 25 L60 36 L50 29 L40 36 L44 25 L35 18 L46 18 Z"
+            fill="#000000"
+          />
+        </svg>
+      );
+
+      const DelegationIcon = () => (
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <circle
+            cx="20"
+            cy="40"
+            r="9"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+          />
+          <circle
+            cx="80"
+            cy="40"
+            r="9"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+          />
+          <circle
+            cx="50"
+            cy="32"
+            r="13"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+          />
+          <path
+            d="M4 84 C4 66 14 60 24 60 C34 60 40 66 40 76"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M96 84 C96 66 86 60 76 60 C66 60 60 66 60 76"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M24 90 C24 68 36 60 50 60 C64 60 76 68 76 90 Z"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+
+      const ModeratorIcon = () => (
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <rect
+            x="36"
+            y="8"
+            width="28"
+            height="48"
+            rx="14"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+          />
+          <path
+            d="M24 46 C24 66 36 76 50 76 C64 76 76 66 76 46"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M50 76 L50 90"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M36 90 L64 90"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M22 20 L12 14 M78 20 L88 14 M18 36 L6 34 M82 36 L94 34"
+            stroke="#000000"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+
+      const AdminIcon = () => (
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <path
+            d="M50 8 L84 20 L84 46 C84 70 68 84 50 92 C32 84 16 70 16 46 L16 20 Z"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M50 28 L56 42 L71 42 L59 51 L63 66 L50 57 L37 66 L41 51 L29 42 L44 42 Z"
+            fill="#000000"
+            stroke="#000000"
+            strokeLinejoin="round"
+          />
+        </svg>
+      );
+
+      const PressIcon = () => (
+        <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+          <rect
+            x="38"
+            y="8"
+            width="24"
+            height="46"
+            rx="12"
+            fill="#FFFFFF"
+            stroke="#000000"
+            strokeWidth="5"
+          />
+          <path
+            d="M24 46 C24 66 36 78 50 78 C64 78 76 66 76 46"
+            fill="none"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M50 78 L50 92"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M34 92 L66 92"
+            stroke="#000000"
+            strokeWidth="5"
+            strokeLinecap="round"
+          />
+          <path
+            d="M18 20 L8 14 M82 20 L92 14"
+            stroke="#000000"
+            strokeWidth="4"
+            strokeLinecap="round"
+          />
+        </svg>
+      );
+
+      const APPLICATIONS = [
+        {
+          id: "bireysel",
+          name: "BİREYSEL",
+          desc: "Tek başına sahaya çık, kendi sesini dünyaya duyur.",
+          url: "https://docs.google.com/forms/d/e/1FAIpQLScNUNkVL9b0dgTQeeju-pR15w4V4ScIZe3Ldh3pvMlM_2lejw/viewform?usp=dialog",
+          accent: "#E2C044",
+          tilt: "-2deg",
+          Icon: SoloIcon,
+        },
+        {
+          id: "delegasyon",
+          name: "DELEGASYON",
+          desc: "Ekibini topla, ülkeni temsil et, sahnede fırtına estir.",
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSfl-ssOW36LCq2j_EJoz1MMm9AfefrEbwynXkCfAmfF-84jBQ/viewform?usp=publish-editor",
+          accent: "#E63946",
+          tilt: "1.5deg",
+          Icon: DelegationIcon,
+        },
+        {
+          id: "moderator",
+          name: "MODERATÖR",
+          desc: "Tartışmaları yönet, adaleti sağla, oturuma hükmet.",
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSf0MoOQQFuIurCCS0tmHx-Zhv7Uw-z96i6Y7fgLapsSkfdZdA/viewform?usp=publish-editor",
+          accent: "#3A86FF",
+          tilt: "-1.5deg",
+          Icon: ModeratorIcon,
+        },
+        {
+          id: "admin",
+          name: "ADMİN",
+          desc: "Sahne arkasının gücü ol; düzeni kur, sistemi yönet.",
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSe3XsSCcnqzryXjYLSvThuGqU3MFU8FeiqvJfaJDo_f0vn_PA/viewform?usp=publish-editor",
+          accent: "#8E44AD",
+          tilt: "2deg",
+          Icon: AdminIcon,
+        },
+        {
+          id: "basin",
+          name: "BASIN",
+          desc: "Etkinlik boyunca fotoğraf çek; komitelerin ve katılımcıların en önemli anlarını karelere taşı.",
+          url: "https://docs.google.com/forms/d/e/1FAIpQLSczL5IAqtUDOAAbD_a_bx6J5-mn_xN7Ag-5gEagxBqB8ggegQ/viewform?usp=publish-editor",
+          accent: "#2EC4B6",
+          tilt: "-1deg",
+          Icon: PressIcon,
+        },
+      ];
+
+      const BG_SYMBOLS = [
+        {
+          text: "POW!",
+          x: "4%",
+          y: "12%",
+          r: "-10deg",
+          dur: "7s",
+          delay: "0s",
+        },
+        {
+          text: "ZAP!",
+          x: "78%",
+          y: "8%",
+          r: "8deg",
+          dur: "9s",
+          delay: "0.6s",
+        },
+        {
+          text: "★",
+          x: "12%",
+          y: "62%",
+          r: "-14deg",
+          dur: "6s",
+          delay: "1.2s",
+        },
+        {
+          text: "WHAM!",
+          x: "82%",
+          y: "55%",
+          r: "12deg",
+          dur: "8s",
+          delay: "0.3s",
+        },
+        {
+          text: "BAM!",
+          x: "30%",
+          y: "86%",
+          r: "-6deg",
+          dur: "10s",
+          delay: "1.6s",
+        },
+        { text: "✦", x: "68%", y: "82%", r: "16deg", dur: "7s", delay: "0.9s" },
+        {
+          text: "KAPOW!",
+          x: "55%",
+          y: "4%",
+          r: "-8deg",
+          dur: "9s",
+          delay: "1.9s",
+        },
+        {
+          text: "BOOM!",
+          x: "2%",
+          y: "88%",
+          r: "10deg",
+          dur: "8s",
+          delay: "0.4s",
+        },
+      ];
+
+      const COMMITTEES = [
+        {
+          id: "bmkp",
+          abbr: "BMKP",
+          name: "Birleşmiş Milletler Kalkınma Programı",
+          desc: "Sürdürülebilir kalkınma, yoksullukla mücadele ve kriz sonrası toparlanma politikalarını uluslararası iş birliği ve kapsayıcı büyüme ilkeleri çerçevesinde ele alır.",
+          accent: "#3A86FF",
+          tilt: "-1.5deg",
+          image:
+            "https://commons.wikimedia.org/wiki/Special:FilePath/UNDP_logo.svg?width=800",
+          logo: true,
+        },
+        {
+          id: "dso",
+          abbr: "DSÖ",
+          name: "Dünya Sağlık Örgütü",
+          desc: "Küresel sağlık güvenliği, salgın yönetimi, sağlık sistemlerinin güçlendirilmesi ve sağlıkta eşitlik konularını bilimsel ve çok taraflı bir zeminde değerlendirir.",
+          accent: "#2EC4B6",
+          tilt: "1.5deg",
+          image:
+            "https://commons.wikimedia.org/wiki/Special:FilePath/World_Health_Organization_Logo.svg?width=800",
+          logo: true,
+        },
+        {
+          id: "bmgk",
+          abbr: "BMGK",
+          name: "Birleşmiş Milletler Güvenlik Konseyi",
+          desc: "Uluslararası barış ve güvenliğin korunması, kriz yönetimi, yaptırım rejimleri ve kolektif güvenlik tedbirlerini Birleşmiş Milletler Şartı çerçevesinde görüşür.",
+          accent: "#E2C044",
+          tilt: "-1deg",
+          image:
+            "https://commons.wikimedia.org/wiki/Special:FilePath/UN_emblem_blue.svg?width=800",
+          logo: true,
+        },
+        {
+          id: "tbmm",
+          abbr: "TBMM",
+          name: "Türkiye Büyük Millet Meclisi",
+          desc: "Ulusal egemenlik, yasama süreçleri ve Türkiye'nin siyasi gündemini parlamenter müzakere ve temsil ilkeleri çerçevesinde ele alır.",
+          accent: "#E63946",
+          tilt: "1deg",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2zUxMe_5m4tZc9AHIzmMujrcQt9JzsiutK5Vn4OEBg&s=10",
+          logo: true,
+        },
+        {
+          id: "hoc",
+          abbr: "HOC",
+          name: "Avam Kamarası / House of Commons",
+          desc: "Parlamenter demokrasi, yasama denetimi ve hükümetin hesap verebilirliğini Avam Kamarası'nın siyasi gelenekleri ve komisyon yapısı üzerinden tartışır.",
+          accent: "#8E44AD",
+          tilt: "-1.5deg",
+          image:
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Houses.of.parliament.overall.arp.jpg?width=900",
+          logo: false,
+        },
+        {
+          id: "luther",
+          abbr: "MLK",
+          name: "Martin Luther'ın Kabinesi",
+          desc: "Reform sürecinin dinî, siyasi ve toplumsal sonuçlarını Martin Luther'in kabinesi etrafında şekillenen karar alma dinamikleri üzerinden değerlendirir.",
+          accent: "#F4A261",
+          tilt: "1.5deg",
+          image:
+            "https://www.kutsalkitap.org/wp-content/uploads/2020/03/martin-luther-1.jpg",
+          logo: false,
+        },
+        {
+          id: "okk",
+          abbr: "OKK",
+          name: "OKK: Büyük Taarruz 1922 / Ortak Kriz Komitesi",
+          desc: "Büyük Taarruz'un hazırlık, istihbarat, lojistik ve komuta süreçlerini 1922 tarihsel bağlamında askerî karar alma perspektifiyle inceler.",
+          accent: "#C1121F",
+          tilt: "-1deg",
+          image:
+            "https://commons.wikimedia.org/wiki/Special:FilePath/Atat%C3%BCrk_Kocatepe%27de.jpg?width=900",
+          logo: false,
+        },
+        {
+          id: "fcc",
+          abbr: "FCC",
+          name: "Fictional Crisis Committe",
+          desc: "DUNE: The Reclamation of Arrakis",
+          accent: "#4361EE",
+          tilt: "1deg",
+          image:
+            "https://image.api.playstation.com/vulcan/ap/rnd/202606/0908/cbe27d6e923d90b48aae9198e68b6a2a22195e75c6376846.png",
+          logo: true,
+        },
+      ];
+
+      const COMMITTEE_BUBBLES = [
+        {
+          text: "GÜNDEM",
+          x: "5%",
+          y: "16%",
+          dur: "11s",
+          delay: "0s",
+          tilt: "-8deg",
+          color: "#2EC4B6",
+        },
+        {
+          text: "KARAR",
+          x: "82%",
+          y: "12%",
+          dur: "13s",
+          delay: "0.8s",
+          tilt: "7deg",
+          color: "#E2C044",
+        },
+        {
+          text: "DİPLOMASİ",
+          x: "8%",
+          y: "68%",
+          dur: "15s",
+          delay: "1.4s",
+          tilt: "5deg",
+          color: "#8E44AD",
+        },
+        {
+          text: "OY BİRLİĞİ",
+          x: "76%",
+          y: "78%",
+          dur: "12s",
+          delay: "0.4s",
+          tilt: "-6deg",
+          color: "#E63946",
+        },
+        {
+          text: "MÜZAKERE",
+          x: "48%",
+          y: "88%",
+          dur: "14s",
+          delay: "1.9s",
+          tilt: "4deg",
+          color: "#3A86FF",
+        },
+      ];
+
+      const CommitteeCard = ({ committee, index }) => {
+        const [imageFailed, setImageFailed] = React.useState(false);
+
+        return (
+          <article
+            className="committee-card"
+            style={{
+              "--accent": committee.accent,
+              "--tilt": committee.tilt,
+              "--delay": `${index * 0.08}s`,
+            }}
+          >
+            <div className={`committee-photo ${committee.logo ? "logo" : ""}`}>
+              <span className="committee-tag">KOMİTE</span>
+              <span className="committee-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              {imageFailed ? (
+                <div className="committee-photo-fallback" aria-hidden="true">
+                  {committee.abbr}
+                </div>
+              ) : (
+                <img
+                  src={committee.image}
+                  alt={`${committee.name} temsili görsel`}
+                  loading="lazy"
+                  onError={() => setImageFailed(true)}
                 />
-            </svg>
+              )}
+            </div>
+            <div className="committee-body">
+              <span className="committee-abbr">{committee.abbr}</span>
+              <h3 className="committee-name">{committee.name}</h3>
+              <p className="committee-desc">{committee.desc}</p>
+            </div>
+          </article>
         );
+      };
 
-        const PunchPopSVG = ({ text = "POW!" }) => (
-            <svg viewBox="0 0 120 120" width="130" height="130">
-                <path
-                    fill="#E2C044"
-                    stroke="#000000"
-                    strokeWidth="5"
-                    d="M 60 10 L 75 35 L 105 25 L 90 55 L 115 75 L 85 85 L 80 115 L 55 95 L 30 110 L 35 80 L 10 70 L 30 50 L 15 25 L 45 35 Z"
+      const CommitteesSection = () => {
+        const sectionRef = React.useRef(null);
+        const [isVisible, setIsVisible] = React.useState(false);
+
+        React.useEffect(() => {
+          const node = sectionRef.current;
+
+          if (!node) return;
+
+          if (typeof IntersectionObserver === "undefined") {
+            setIsVisible(true);
+            return;
+          }
+
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setIsVisible(true);
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.12 },
+          );
+
+          observer.observe(node);
+
+          return () => observer.disconnect();
+        }, []);
+
+        return (
+          <section
+            id="komiteler"
+            ref={sectionRef}
+            className={`committees-section ${isVisible ? "in-view" : ""}`}
+          >
+            <div className="committee-bubbles" aria-hidden="true">
+              {COMMITTEE_BUBBLES.map((bubble) => (
+                <span
+                  key={`${bubble.text}-${bubble.x}`}
+                  className="committee-bubble"
+                  style={{
+                    "--x": bubble.x,
+                    "--y": bubble.y,
+                    "--dur": bubble.dur,
+                    "--delay": bubble.delay,
+                    "--tilt": bubble.tilt,
+                    "--bubble": bubble.color,
+                  }}
+                >
+                  {bubble.text}
+                </span>
+              ))}
+            </div>
+
+            <div className="applications-header">
+              <h2 className="applications-title">
+                KOMİTELER <span>SAHNESİ</span>
+              </h2>
+              <p className="applications-desc">
+                Sekiz ayrı komitede diplomasi, tarih ve karar alma süreçleri
+                yeniden canlanıyor. Resmî gündemler, cartoon heyecanıyla aynı
+                sahnede buluşuyor.
+              </p>
+            </div>
+
+            <div className="committee-grid">
+              {COMMITTEES.map((committee, index) => (
+                <CommitteeCard
+                  key={committee.id}
+                  committee={committee}
+                  index={index}
                 />
-                <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fontSize="28" fontFamily="Bangers, sans-serif" fontWeight="bold" fill="#000">
-                    {text}
-                </text>
-            </svg>
+              ))}
+            </div>
+
+            <p className="applications-note">
+              Komite gündemleri ve akademik takvim, başvuru sürecinde ayrıca
+              ilan edilecektir.
+            </p>
+          </section>
         );
+      };
 
-        const FistIconSVG = () => (
-            <svg viewBox="0 0 100 100" width="100" height="100">
-                <path
-                    fill="#FFFFFF"
-                    stroke="#000000"
-                    strokeWidth="4"
-                    d="M20,60 C10,50 15,30 35,25 C45,10 75,15 80,35 C95,40 90,70 75,80 C60,90 30,85 20,60 Z"
-                />
-                <circle cx="40" cy="45" r="5" fill="#000" />
-                <circle cx="60" cy="45" r="5" fill="#000" />
-                <path d="M 35 65 Q 50 75 65 65" stroke="#000" strokeWidth="4" fill="none" />
-            </svg>
-        );
+      const ApplicationSection = () => {
+        const sectionRef = React.useRef(null);
+        const [isVisible, setIsVisible] = React.useState(false);
 
-        const SoloIcon = () => (
-            <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-                <circle cx="50" cy="38" r="16" fill="#FFFFFF" stroke="#000000" strokeWidth="5" />
-                <path
-                    d="M18 90 C18 66 34 58 50 58 C66 58 82 66 82 90 Z"
-                    fill="#FFFFFF"
-                    stroke="#000000"
-                    strokeWidth="5"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M50 8 L54 18 L65 18 L56 25 L60 36 L50 29 L40 36 L44 25 L35 18 L46 18 Z"
-                    fill="#000000"
-                />
-            </svg>
-        );
+        React.useEffect(() => {
+          const node = sectionRef.current;
 
-        const DelegationIcon = () => (
-            <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-                <circle cx="20" cy="40" r="9" fill="#FFFFFF" stroke="#000000" strokeWidth="5" />
-                <circle cx="80" cy="40" r="9" fill="#FFFFFF" stroke="#000000" strokeWidth="5" />
-                <circle cx="50" cy="32" r="13" fill="#FFFFFF" stroke="#000000" strokeWidth="5" />
-                <path
-                    d="M4 84 C4 66 14 60 24 60 C34 60 40 66 40 76"
-                    fill="none"
-                    stroke="#000000"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                />
-                <path
-                    d="M96 84 C96 66 86 60 76 60 C66 60 60 66 60 76"
-                    fill="none"
-                    stroke="#000000"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                />
-                <path
-                    d="M24 90 C24 68 36 60 50 60 C64 60 76 68 76 90 Z"
-                    fill="#FFFFFF"
-                    stroke="#000000"
-                    strokeWidth="5"
-                    strokeLinejoin="round"
-                />
-            </svg>
-        );
+          if (!node) return;
 
-        const ModeratorIcon = () => (
-            <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-                <rect x="36" y="8" width="28" height="48" rx="14" fill="#FFFFFF" stroke="#000000" strokeWidth="5" />
-                <path
-                    d="M24 46 C24 66 36 76 50 76 C64 76 76 66 76 46"
-                    fill="none"
-                    stroke="#000000"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                />
-                <path d="M50 76 L50 90" stroke="#000000" strokeWidth="5" strokeLinecap="round" />
-                <path d="M36 90 L64 90" stroke="#000000" strokeWidth="5" strokeLinecap="round" />
-                <path
-                    d="M22 20 L12 14 M78 20 L88 14 M18 36 L6 34 M82 36 L94 34"
-                    stroke="#000000"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                />
-            </svg>
-        );
+          if (typeof IntersectionObserver === "undefined") {
+            setIsVisible(true);
+            return;
+          }
 
-        const AdminIcon = () => (
-            <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-                <path
-                    d="M50 8 L84 20 L84 46 C84 70 68 84 50 92 C32 84 16 70 16 46 L16 20 Z"
-                    fill="#FFFFFF"
-                    stroke="#000000"
-                    strokeWidth="5"
-                    strokeLinejoin="round"
-                />
-                <path
-                    d="M50 28 L56 42 L71 42 L59 51 L63 66 L50 57 L37 66 L41 51 L29 42 L44 42 Z"
-                    fill="#000000"
-                    stroke="#000000"
-                    strokeLinejoin="round"
-                />
-            </svg>
-        );
-
-        const PressIcon = () => (
-            <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-                <rect x="38" y="8" width="24" height="46" rx="12" fill="#FFFFFF" stroke="#000000" strokeWidth="5" />
-                <path
-                    d="M24 46 C24 66 36 78 50 78 C64 78 76 66 76 46"
-                    fill="none"
-                    stroke="#000000"
-                    strokeWidth="5"
-                    strokeLinecap="round"
-                />
-                <path d="M50 78 L50 92" stroke="#000000" strokeWidth="5" strokeLinecap="round" />
-                <path d="M34 92 L66 92" stroke="#000000" strokeWidth="5" strokeLinecap="round" />
-                <path
-                    d="M18 20 L8 14 M82 20 L92 14"
-                    stroke="#000000"
-                    strokeWidth="4"
-                    strokeLinecap="round"
-                />
-            </svg>
-        );
-
-        const APPLICATIONS = [
-            {
-                id: "bireysel",
-                name: "BİREYSEL",
-                desc: "Tek başına sahaya çık, kendi sesini dünyaya duyur.",
-                url: "https://docs.google.com/forms/d/e/1FAIpQLScNUNkVL9b0dgTQeeju-pR15w4V4ScIZe3Ldh3pvMlM_2lejw/viewform?usp=dialog",
-                accent: "#E2C044",
-                tilt: "-2deg",
-                Icon: SoloIcon
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setIsVisible(true);
+                  observer.unobserve(entry.target);
+                }
+              });
             },
-            {
-                id: "delegasyon",
-                name: "DELEGASYON",
-                desc: "Ekibini topla, ülkeni temsil et, sahnede fırtına estir.",
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSfl-ssOW36LCq2j_EJoz1MMm9AfefrEbwynXkCfAmfF-84jBQ/viewform?usp=publish-editor",
-                accent: "#E63946",
-                tilt: "1.5deg",
-                Icon: DelegationIcon
-            },
-            {
-                id: "moderator",
-                name: "MODERATÖR",
-                desc: "Tartışmaları yönet, adaleti sağla, oturuma hükmet.",
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSf0MoOQQFuIurCCS0tmHx-Zhv7Uw-z96i6Y7fgLapsSkfdZdA/viewform?usp=publish-editor",
-                accent: "#3A86FF",
-                tilt: "-1.5deg",
-                Icon: ModeratorIcon
-            },
-            {
-                id: "admin",
-                name: "ADMİN",
-                desc: "Sahne arkasının gücü ol; düzeni kur, sistemi yönet.",
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSe3XsSCcnqzryXjYLSvThuGqU3MFU8FeiqvJfaJDo_f0vn_PA/viewform?usp=publish-editor",
-                accent: "#8E44AD",
-                tilt: "2deg",
-                Icon: AdminIcon
-            },
-            {
-                id: "basin",
-                name: "BASIN",
-                desc: "Etkinlik boyunca fotoğraf çek; komitelerin ve katılımcıların en önemli anlarını karelere taşı.",
-                url: "https://docs.google.com/forms/d/e/1FAIpQLSczL5IAqtUDOAAbD_a_bx6J5-mn_xN7Ag-5gEagxBqB8ggegQ/viewform?usp=publish-editor",
-                accent: "#2EC4B6",
-                tilt: "-1deg",
-                Icon: PressIcon
-            }
-        ];
+            { threshold: 0.12 },
+          );
 
-        const BG_SYMBOLS = [
-            { text: "POW!", x: "4%", y: "12%", r: "-10deg", dur: "7s", delay: "0s" },
-            { text: "ZAP!", x: "78%", y: "8%", r: "8deg", dur: "9s", delay: "0.6s" },
-            { text: "★", x: "12%", y: "62%", r: "-14deg", dur: "6s", delay: "1.2s" },
-            { text: "WHAM!", x: "82%", y: "55%", r: "12deg", dur: "8s", delay: "0.3s" },
-            { text: "BAM!", x: "30%", y: "86%", r: "-6deg", dur: "10s", delay: "1.6s" },
-            { text: "✦", x: "68%", y: "82%", r: "16deg", dur: "7s", delay: "0.9s" },
-            { text: "KAPOW!", x: "55%", y: "4%", r: "-8deg", dur: "9s", delay: "1.9s" },
-            { text: "BOOM!", x: "2%", y: "88%", r: "10deg", dur: "8s", delay: "0.4s" }
-        ];
+          observer.observe(node);
 
-        const COMMITTEES = [
-            {
-                id: "bmkp",
-                abbr: "BMKP",
-                name: "Birleşmiş Milletler Kalkınma Programı",
-                desc: "Sürdürülebilir kalkınma, yoksullukla mücadele ve kriz sonrası toparlanma politikalarını uluslararası iş birliği ve kapsayıcı büyüme ilkeleri çerçevesinde ele alır.",
-                accent: "#3A86FF",
-                tilt: "-1.5deg",
-                image: "https://commons.wikimedia.org/wiki/Special:FilePath/UNDP_logo.svg?width=800",
-                logo: true
-            },
-            {
-                id: "dso",
-                abbr: "DSÖ",
-                name: "Dünya Sağlık Örgütü",
-                desc: "Küresel sağlık güvenliği, salgın yönetimi, sağlık sistemlerinin güçlendirilmesi ve sağlıkta eşitlik konularını bilimsel ve çok taraflı bir zeminde değerlendirir.",
-                accent: "#2EC4B6",
-                tilt: "1.5deg",
-                image: "https://commons.wikimedia.org/wiki/Special:FilePath/World_Health_Organization_Logo.svg?width=800",
-                logo: true
-            },
-            {
-                id: "bmgk",
-                abbr: "BMGK",
-                name: "Birleşmiş Milletler Güvenlik Konseyi",
-                desc: "Uluslararası barış ve güvenliğin korunması, kriz yönetimi, yaptırım rejimleri ve kolektif güvenlik tedbirlerini Birleşmiş Milletler Şartı çerçevesinde görüşür.",
-                accent: "#E2C044",
-                tilt: "-1deg",
-                image: "https://commons.wikimedia.org/wiki/Special:FilePath/UN_emblem_blue.svg?width=800",
-                logo: true
-            },
-            {
-                id: "tbmm",
-                abbr: "TBMM",
-                name: "Türkiye Büyük Millet Meclisi",
-                desc: "Ulusal egemenlik, yasama süreçleri ve Türkiye'nin siyasi gündemini parlamenter müzakere ve temsil ilkeleri çerçevesinde ele alır.",
-                accent: "#E63946",
-                tilt: "1deg",
-                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf2zUxMe_5m4tZc9AHIzmMujrcQt9JzsiutK5Vn4OEBg&s=10",
-                logo: true
-            },
-            {
-                id: "hoc",
-                abbr: "HOC",
-                name: "Avam Kamarası / House of Commons",
-                desc: "Parlamenter demokrasi, yasama denetimi ve hükümetin hesap verebilirliğini Avam Kamarası'nın siyasi gelenekleri ve komisyon yapısı üzerinden tartışır.",
-                accent: "#8E44AD",
-                tilt: "-1.5deg",
-                image: "https://commons.wikimedia.org/wiki/Special:FilePath/Houses.of.parliament.overall.arp.jpg?width=900",
-                logo: false
-            },
-            {
-                id: "luther",
-                abbr: "MLK",
-                name: "Martin Luther'ın Kabinesi",
-                desc: "Reform sürecinin dinî, siyasi ve toplumsal sonuçlarını Martin Luther'in kabinesi etrafında şekillenen karar alma dinamikleri üzerinden değerlendirir.",
-                accent: "#F4A261",
-                tilt: "1.5deg",
-                image: "https://www.kutsalkitap.org/wp-content/uploads/2020/03/martin-luther-1.jpg",
-                logo: false
-            },
-            {
-                id: "okk",
-                abbr: "OKK",
-                name: "OKK: Büyük Taarruz 1922 / Ortak Kriz Komitesi",
-                desc: "Büyük Taarruz'un hazırlık, istihbarat, lojistik ve komuta süreçlerini 1922 tarihsel bağlamında askerî karar alma perspektifiyle inceler.",
-                accent: "#C1121F",
-                tilt: "-1deg",
-                image: "https://commons.wikimedia.org/wiki/Special:FilePath/Atat%C3%BCrk_Kocatepe%27de.jpg?width=900",
-                logo: false
-            },
-            {
-                id: "fcc",
-                abbr: "FCC",
-                name: "Fictional Crisis Committe",
-                desc: "DUNE: The Reclamation of Arrakis",
-                accent: "#4361EE",
-                tilt: "1deg",
-                image: "https://image.api.playstation.com/vulcan/ap/rnd/202606/0908/cbe27d6e923d90b48aae9198e68b6a2a22195e75c6376846.png",
-                logo: true
-            }
-        ];
+          return () => observer.disconnect();
+        }, []);
 
-        const COMMITTEE_BUBBLES = [
-            { text: "GÜNDEM", x: "5%", y: "16%", dur: "11s", delay: "0s", tilt: "-8deg", color: "#2EC4B6" },
-            { text: "KARAR", x: "82%", y: "12%", dur: "13s", delay: "0.8s", tilt: "7deg", color: "#E2C044" },
-            { text: "DİPLOMASİ", x: "8%", y: "68%", dur: "15s", delay: "1.4s", tilt: "5deg", color: "#8E44AD" },
-            { text: "OY BİRLİĞİ", x: "76%", y: "78%", dur: "12s", delay: "0.4s", tilt: "-6deg", color: "#E63946" },
-            { text: "MÜZAKERE", x: "48%", y: "88%", dur: "14s", delay: "1.9s", tilt: "4deg", color: "#3A86FF" }
-        ];
-
-        const CommitteeCard = ({ committee, index }) => {
-            const [imageFailed, setImageFailed] = React.useState(false);
-
-            return (
-                <article
-                    className="committee-card"
+        return (
+          <section
+            id="basvuru"
+            ref={sectionRef}
+            className={`applications-section ${isVisible ? "in-view" : ""}`}
+          >
+            <div className="applications-bg" aria-hidden="true">
+              <div className="app-bg-rays"></div>
+              <div className="app-bg-speedlines"></div>
+              <div className="app-bg-symbols">
+                {BG_SYMBOLS.map((symbol) => (
+                  <span
+                    key={`${symbol.text}-${symbol.x}`}
                     style={{
-                        "--accent": committee.accent,
-                        "--tilt": committee.tilt,
-                        "--delay": `${index * 0.08}s`
+                      "--x": symbol.x,
+                      "--y": symbol.y,
+                      "--r": symbol.r,
+                      "--dur": symbol.dur,
+                      "--delay": symbol.delay,
                     }}
-                >
-                    <div className={`committee-photo ${committee.logo ? "logo" : ""}`}>
-                        <span className="committee-tag">KOMİTE</span>
-                        <span className="committee-number">
-                            {String(index + 1).padStart(2, "0")}
-                        </span>
-                        {imageFailed ? (
-                            <div className="committee-photo-fallback" aria-hidden="true">
-                                {committee.abbr}
-                            </div>
-                        ) : (
-                            <img
-                                src={committee.image}
-                                alt={`${committee.name} temsili görsel`}
-                                loading="lazy"
-                                onError={() => setImageFailed(true)}
-                            />
-                        )}
-                    </div>
-                    <div className="committee-body">
-                        <span className="committee-abbr">{committee.abbr}</span>
-                        <h3 className="committee-name">{committee.name}</h3>
-                        <p className="committee-desc">{committee.desc}</p>
-                    </div>
-                </article>
-            );
-        };
+                  >
+                    {symbol.text}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-        const CommitteesSection = () => {
-            const sectionRef = React.useRef(null);
-            const [isVisible, setIsVisible] = React.useState(false);
+            <div className="applications-header">
+              <h2 className="applications-title">
+                BAŞVURU <span>PANELİ</span>
+              </h2>
+              <p className="applications-desc">
+                Hangi rolde bize katılacaksın? Formu seç, başvurunu tamamla.
+              </p>
+              <p className="applications-fees" aria-label="Başvuru ücretleri">
+                <span>
+                  Erken Kayıt <strong>1050 TL</strong>
+                </span>
+                <span className="fee-divider" aria-hidden="true">
+                  •
+                </span>
+                <span>
+                  Geç Kayıt <strong>1100 TL</strong>
+                </span>
+                <span className="fee-divider" aria-hidden="true">
+                  •
+                </span>
+                <span>
+                  Admin <strong>600 TL</strong>
+                </span>
+                <span className="fee-divider" aria-hidden="true">
+                  •
+                </span>
+                <span>
+                  Basın <strong>Ücretsiz</strong>
+                </span>
+              </p>
+            </div>
 
-            React.useEffect(() => {
-                const node = sectionRef.current;
+            <div className="application-grid">
+              {APPLICATIONS.map((app, index) => {
+                const Icon = app.Icon;
 
-                if (!node) return;
-
-                if (typeof IntersectionObserver === "undefined") {
-                    setIsVisible(true);
-                    return;
-                }
-
-                const observer = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                setIsVisible(true);
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    },
-                    { threshold: 0.12 }
+                return (
+                  <a
+                    key={app.id}
+                    className="app-card"
+                    href={app.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${app.name} başvurusu yap`}
+                    style={{
+                      "--accent": app.accent,
+                      "--tilt": app.tilt,
+                      "--delay": `${index * 0.12}s`,
+                    }}
+                  >
+                    <span className="app-number">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+                    <span className="app-icon">
+                      <Icon />
+                    </span>
+                    <h3 className="app-name">{app.name}</h3>
+                    <p className="app-desc">{app.desc}</p>
+                    <span className="app-cta">
+                      BAŞVURU YAP <span aria-hidden="true">➔</span>
+                    </span>
+                  </a>
                 );
+              })}
+            </div>
 
-                observer.observe(node);
+            <p className="applications-note">
+              Başvurular Google Forms üzerinden alınmaktadır.
+            </p>
+          </section>
+        );
+      };
 
-                return () => observer.disconnect();
-            }, []);
+      const COUNTDOWN_TARGET = new Date("2026-12-04T09:00:00+03:00").getTime();
 
-            return (
-                <section
-                    id="komiteler"
-                    ref={sectionRef}
-                    className={`committees-section ${isVisible ? "in-view" : ""}`}
-                >
-                    <div className="committee-bubbles" aria-hidden="true">
-                        {COMMITTEE_BUBBLES.map((bubble) => (
-                            <span
-                                key={`${bubble.text}-${bubble.x}`}
-                                className="committee-bubble"
-                                style={{
-                                    "--x": bubble.x,
-                                    "--y": bubble.y,
-                                    "--dur": bubble.dur,
-                                    "--delay": bubble.delay,
-                                    "--tilt": bubble.tilt,
-                                    "--bubble": bubble.color
-                                }}
-                            >
-                                {bubble.text}
-                            </span>
-                        ))}
-                    </div>
+      const getRemainingTime = () => {
+        const diff = Math.max(0, COUNTDOWN_TARGET - Date.now());
 
-                    <div className="applications-header">
-                        <h2 className="applications-title">
-                            KOMİTELER <span>SAHNESİ</span>
-                        </h2>
-                        <p className="applications-desc">
-                            Sekiz ayrı komitede diplomasi, tarih ve karar alma süreçleri yeniden canlanıyor.
-                            Resmî gündemler, cartoon heyecanıyla aynı sahnede buluşuyor.
-                        </p>
-                    </div>
-
-                    <div className="committee-grid">
-                        {COMMITTEES.map((committee, index) => (
-                            <CommitteeCard
-                                key={committee.id}
-                                committee={committee}
-                                index={index}
-                            />
-                        ))}
-                    </div>
-
-                    <p className="applications-note">
-                        Komite gündemleri ve akademik takvim, başvuru sürecinde ayrıca ilan edilecektir.
-                    </p>
-                </section>
-            );
+        return {
+          days: Math.floor(diff / 86400000),
+          hours: Math.floor((diff / 3600000) % 24),
+          minutes: Math.floor((diff / 60000) % 60),
+          seconds: Math.floor((diff / 1000) % 60),
         };
+      };
 
-        const ApplicationSection = () => {
-            const sectionRef = React.useRef(null);
-            const [isVisible, setIsVisible] = React.useState(false);
+      const Countdown = () => {
+        const [timeLeft, setTimeLeft] = React.useState(getRemainingTime);
 
-            React.useEffect(() => {
-                const node = sectionRef.current;
+        React.useEffect(() => {
+          const interval = setInterval(() => {
+            setTimeLeft(getRemainingTime());
+          }, 1000);
 
-                if (!node) return;
+          return () => clearInterval(interval);
+        }, []);
 
-                if (typeof IntersectionObserver === "undefined") {
-                    setIsVisible(true);
-                    return;
-                }
+        const units = [
+          { label: "GÜN", value: timeLeft.days },
+          { label: "SAAT", value: timeLeft.hours },
+          { label: "DAKİKA", value: timeLeft.minutes },
+          { label: "SANİYE", value: timeLeft.seconds },
+        ];
 
-                const observer = new IntersectionObserver(
-                    (entries) => {
-                        entries.forEach((entry) => {
-                            if (entry.isIntersecting) {
-                                setIsVisible(true);
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    },
-                    { threshold: 0.12 }
-                );
+        return (
+          <div className="countdown" aria-label="Etkinliğe kalan süre">
+            <div className="countdown-tag">ETKİNLİĞE SON</div>
+            <div className="countdown-grid">
+              {units.map((unit) => (
+                <div className="countdown-box" key={unit.label}>
+                  <span className="countdown-value">
+                    {String(unit.value).padStart(2, "0")}
+                  </span>
+                  <span className="countdown-label">{unit.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      };
 
-                observer.observe(node);
+      const Navbar = () => {
+        const [menuOpen, setMenuOpen] = React.useState(false);
+        const [scrolled, setScrolled] = React.useState(false);
 
-                return () => observer.disconnect();
-            }, []);
+        React.useEffect(() => {
+          const handleScroll = () => setScrolled(window.scrollY > 30);
 
-            return (
-                <section
-                    id="basvuru"
-                    ref={sectionRef}
-                    className={`applications-section ${isVisible ? "in-view" : ""}`}
-                >
-                    <div className="applications-bg" aria-hidden="true">
-                        <div className="app-bg-rays"></div>
-                        <div className="app-bg-speedlines"></div>
-                        <div className="app-bg-symbols">
-                            {BG_SYMBOLS.map((symbol) => (
-                                <span
-                                    key={`${symbol.text}-${symbol.x}`}
-                                    style={{
-                                        "--x": symbol.x,
-                                        "--y": symbol.y,
-                                        "--r": symbol.r,
-                                        "--dur": symbol.dur,
-                                        "--delay": symbol.delay
-                                    }}
-                                >
-                                    {symbol.text}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
+          handleScroll();
+          window.addEventListener("scroll", handleScroll, { passive: true });
 
-                    <div className="applications-header">
-                        <h2 className="applications-title">
-                            BAŞVURU <span>PANELİ</span>
-                        </h2>
-                        <p className="applications-desc">
-                            Hangi rolde bize katılacaksın? Formu seç, başvurunu tamamla.
-                        </p>
-                        <p className="applications-fees" aria-label="Başvuru ücretleri">
-                            <span>Erken Kayıt <strong>1050 TL</strong></span>
-                            <span className="fee-divider" aria-hidden="true">•</span>
-                            <span>Geç Kayıt <strong>1100 TL</strong></span>
-                            <span className="fee-divider" aria-hidden="true">•</span>
-                            <span>Admin <strong>600 TL</strong></span>
-                            <span className="fee-divider" aria-hidden="true">•</span>
-                            <span>Basın <strong>Ücretsiz</strong></span>
-                        </p>
-                    </div>
+          return () => window.removeEventListener("scroll", handleScroll);
+        }, []);
 
-                    <div className="application-grid">
-                        {APPLICATIONS.map((app, index) => {
-                            const Icon = app.Icon;
+        const closeMenu = () => setMenuOpen(false);
 
-                            return (
-                                <a
-                                    key={app.id}
-                                    className="app-card"
-                                    href={app.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label={`${app.name} başvurusu yap`}
-                                    style={{
-                                        "--accent": app.accent,
-                                        "--tilt": app.tilt,
-                                        "--delay": `${index * 0.12}s`
-                                    }}
-                                >
-                                    <span className="app-number">
-                                        {String(index + 1).padStart(2, "0")}
-                                    </span>
-                                    <span className="app-icon">
-                                        <Icon />
-                                    </span>
-                                    <h3 className="app-name">{app.name}</h3>
-                                    <p className="app-desc">{app.desc}</p>
-                                    <span className="app-cta">
-                                        BAŞVURU YAP <span aria-hidden="true">➔</span>
-                                    </span>
-                                </a>
-                            );
-                        })}
-                    </div>
+        return (
+          <header className={`site-nav ${scrolled ? "scrolled" : ""}`}>
+            <a className="nav-brand" href="#hero" onClick={closeMenu}>
+              <img src={logoUrl} alt="MBM Menderes Logo" className="nav-logo" />
+              <span className="nav-brand-text">
+                MBM <span>MENDERES</span>
+              </span>
+            </a>
 
-                    <p className="applications-note">
-                        Başvurular Google Forms üzerinden alınmaktadır.
-                    </p>
-                </section>
-            );
-        };
+            <button
+              className={`nav-toggle ${menuOpen ? "open" : ""}`}
+              type="button"
+              aria-label="Menüyü aç/kapat"
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((prev) => !prev)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
 
-        const COUNTDOWN_TARGET = new Date("2026-12-04T09:00:00+03:00").getTime();
+            <nav
+              className={`nav-links ${menuOpen ? "open" : ""}`}
+              aria-label="Ana menü"
+            >
+              <a href="#hero" onClick={closeMenu}>
+                ANA SAYFA
+              </a>
+              <a href="#komiteler" onClick={closeMenu}>
+                KOMİTELER
+              </a>
+              <a href="#basvuru" onClick={closeMenu}>
+                BAŞVURU
+              </a>
+              <a href="#basvuru" className="nav-cta" onClick={closeMenu}>
+                HEMEN BAŞVUR ➔
+              </a>
+            </nav>
+          </header>
+        );
+      };
 
-        const getRemainingTime = () => {
-            const diff = Math.max(0, COUNTDOWN_TARGET - Date.now());
+      const SiteFooter = () => (
+        <footer className="site-footer">
+          <div className="footer-inner">
+            <div className="footer-brand">
+              <img
+                src={logoUrl}
+                alt="MBM Menderes Logo"
+                className="footer-logo"
+              />
+              <div className="footer-brand-text">
+                <span className="footer-title">MBM MENDERES</span>
+                <span className="footer-sub">MODEL BİRLEŞMİŞ MİLLETLER</span>
+              </div>
+            </div>
 
-            return {
-                days: Math.floor(diff / 86400000),
-                hours: Math.floor((diff / 3600000) % 24),
-                minutes: Math.floor((diff / 60000) % 60),
-                seconds: Math.floor((diff / 1000) % 60)
-            };
-        };
+            <div className="footer-credit">
+              website by: <span>OCAL</span>
+            </div>
+          </div>
 
-        const Countdown = () => {
-            const [timeLeft, setTimeLeft] = React.useState(getRemainingTime);
+          <div className="footer-bottom">
+            <span>© {new Date().getFullYear()} MBM Menderes</span>
+            <span>Adnan Menderes Anadolu Lisesi</span>
+          </div>
+        </footer>
+      );
 
-            React.useEffect(() => {
-                const interval = setInterval(() => {
-                    setTimeLeft(getRemainingTime());
-                }, 1000);
+      const CartoonBrawlFight = () => {
+        const [brawlItems, setBrawlItems] = React.useState([]);
 
-                return () => clearInterval(interval);
-            }, []);
+        React.useEffect(() => {
+          const interval = setInterval(() => {
+            const id = Date.now() + Math.random();
+            const types = [
+              "smoke",
+              "fist",
+              "pow",
+              "wham",
+              "bam",
+              "kaboom",
+              "zap",
+            ];
+            const type = types[Math.floor(Math.random() * types.length)];
 
-            const units = [
-                { label: "GÜN", value: timeLeft.days },
-                { label: "SAAT", value: timeLeft.hours },
-                { label: "DAKİKA", value: timeLeft.minutes },
-                { label: "SANİYE", value: timeLeft.seconds }
+            const top = Math.floor(Math.random() * 85) + 5;
+            const left = Math.floor(Math.random() * 85) + 5;
+            const size = Math.floor(Math.random() * 100) + 110;
+            const rotate = Math.floor(Math.random() * 80) - 40;
+
+            const newItem = { id, type, top, left, size, rotate };
+
+            setBrawlItems((prev) => [...prev.slice(-16), newItem]);
+          }, 220);
+
+          return () => clearInterval(interval);
+        }, []);
+
+        return (
+          <div className="brawl-container">
+            {brawlItems.map((item) => (
+              <div
+                key={item.id}
+                className="brawl-cloud"
+                style={{
+                  top: `${item.top}%`,
+                  left: `${item.left}%`,
+                  width: `${item.size}px`,
+                  height: `${item.size}px`,
+                  transform: `rotate(${item.rotate}deg)`,
+                  animation:
+                    "punchAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards",
+                }}
+              >
+                {item.type === "smoke" && <SmokeCloudSVG color="#FFFFFF" />}
+                {item.type === "fist" && <FistIconSVG />}
+                {item.type === "pow" && <PunchPopSVG text="POW!" />}
+                {item.type === "wham" && <PunchPopSVG text="WHAM!" />}
+                {item.type === "bam" && <PunchPopSVG text="BAM!" />}
+                {item.type === "kaboom" && <PunchPopSVG text="BOOM!" />}
+                {item.type === "zap" && <PunchPopSVG text="KAPOW!" />}
+              </div>
+            ))}
+          </div>
+        );
+      };
+
+      const App = () => {
+        const [introStep, setIntroStep] = React.useState(1);
+        const [interactiveEffects, setInteractiveEffects] = React.useState([]);
+        const isIntroLocked = introStep < 3;
+
+        React.useEffect(() => {
+          if (!isIntroLocked) return;
+
+          const scrollbarWidth =
+            window.innerWidth - document.documentElement.clientWidth;
+          const previousOverflow = document.body.style.overflow;
+          const previousPaddingRight = document.body.style.paddingRight;
+
+          document.body.style.overflow = "hidden";
+
+          if (scrollbarWidth > 0) {
+            document.body.style.paddingRight = `${scrollbarWidth}px`;
+          }
+
+          window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+
+          const preventScroll = (event) => event.preventDefault();
+          const preventScrollKeys = (event) => {
+            const blockedKeys = [
+              "ArrowUp",
+              "ArrowDown",
+              "PageUp",
+              "PageDown",
+              "Home",
+              "End",
+              " ",
             ];
 
-            return (
-                <div className="countdown" aria-label="Etkinliğe kalan süre">
-                    <div className="countdown-tag">ETKİNLİĞE SON</div>
-                    <div className="countdown-grid">
-                        {units.map((unit) => (
-                            <div className="countdown-box" key={unit.label}>
-                                <span className="countdown-value">
-                                    {String(unit.value).padStart(2, "0")}
-                                </span>
-                                <span className="countdown-label">{unit.label}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            );
+            if (blockedKeys.includes(event.key)) {
+              event.preventDefault();
+            }
+          };
+
+          window.addEventListener("wheel", preventScroll, { passive: false });
+          window.addEventListener("touchmove", preventScroll, {
+            passive: false,
+          });
+          window.addEventListener("keydown", preventScrollKeys);
+
+          return () => {
+            document.body.style.overflow = previousOverflow;
+            document.body.style.paddingRight = previousPaddingRight;
+            window.removeEventListener("wheel", preventScroll);
+            window.removeEventListener("touchmove", preventScroll);
+            window.removeEventListener("keydown", preventScrollKeys);
+          };
+        }, [isIntroLocked]);
+
+        React.useEffect(() => {
+          const timer2 = setTimeout(() => {
+            setIntroStep(2);
+          }, 1800);
+
+          const timer3 = setTimeout(() => {
+            setIntroStep(3);
+          }, 3000);
+
+          return () => {
+            clearTimeout(timer2);
+            clearTimeout(timer3);
+          };
+        }, []);
+
+        const skipIntro = () => {
+          setIntroStep(3);
         };
 
-        const Navbar = () => {
-            const [menuOpen, setMenuOpen] = React.useState(false);
-            const [scrolled, setScrolled] = React.useState(false);
+        const triggerExplosionFX = (x, y) => {
+          const soundPops = ["BOOM!", "KAPOW!", "BAM!", "ZAP!", "WHAM!"];
+          const randomPop =
+            soundPops[Math.floor(Math.random() * soundPops.length)];
 
-            React.useEffect(() => {
-                const handleScroll = () => setScrolled(window.scrollY > 30);
+          const newBatch = [
+            {
+              id: Date.now() + 1,
+              type: "punch",
+              x: x - 80,
+              y: y - 60,
+              text: randomPop,
+            },
+            {
+              id: Date.now() + 2,
+              type: "smoke",
+              x: x - 100,
+              y: y - 100,
+              size: 220,
+            },
+            {
+              id: Date.now() + 3,
+              type: "smoke",
+              x: x - 160,
+              y: y - 40,
+              size: 150,
+            },
+            {
+              id: Date.now() + 4,
+              type: "smoke",
+              x: x + 20,
+              y: y - 40,
+              size: 150,
+            },
+          ];
 
-                handleScroll();
-                window.addEventListener("scroll", handleScroll, { passive: true });
+          setInteractiveEffects((prev) => [...prev, ...newBatch]);
 
-                return () => window.removeEventListener("scroll", handleScroll);
-            }, []);
+          setTimeout(() => {
+            setInteractiveEffects((prev) =>
+              prev.filter((item) => !newBatch.find((b) => b.id === item.id)),
+            );
+          }, 800);
+        };
 
-            const closeMenu = () => setMenuOpen(false);
+        const handleHeroClick = (e) => {
+          const rect = e.currentTarget.getBoundingClientRect();
+          const clickX = e.clientX - rect.left;
+          const clickY = e.clientY - rect.top;
+          triggerExplosionFX(clickX, clickY);
+        };
 
-            return (
-                <header className={`site-nav ${scrolled ? "scrolled" : ""}`}>
-                    <a className="nav-brand" href="#hero" onClick={closeMenu}>
-                        <img src={logoUrl} alt="MBM Menderes Logo" className="nav-logo" />
-                        <span className="nav-brand-text">
-                            MBM <span>MENDERES</span>
-                        </span>
-                    </a>
+        const handleHeroCtaClick = (e) => {
+          handleHeroClick(e);
 
-                    <button
-                        className={`nav-toggle ${menuOpen ? "open" : ""}`}
-                        type="button"
-                        aria-label="Menüyü aç/kapat"
-                        aria-expanded={menuOpen}
-                        onClick={() => setMenuOpen((prev) => !prev)}
+          setTimeout(() => {
+            const section = document.getElementById("basvuru");
+
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+          }, 250);
+        };
+
+        return (
+          <>
+            {introStep >= 3 && <Navbar />}
+            <div id="hero">
+              <div className="comic-panels-bg">
+                {[...Array(12)].map((_, i) => (
+                  <div key={i} className="comic-panel"></div>
+                ))}
+              </div>
+
+              <CartoonBrawlFight />
+
+              {introStep < 3 && (
+                <button className="skip-intro-btn" onClick={skipIntro}>
+                  İNTROYU GEÇ ➔
+                </button>
+              )}
+
+              <div
+                className={`asymmetric-container ${introStep >= 1 ? "visible" : ""}`}
+              >
+                <div
+                  className={`header-asymmetric ${introStep >= 2 ? "show" : ""}`}
+                >
+                  <div className="logo-badge" title="MBM Menderes Logo">
+                    <img src={logoUrl} alt="MBM Menderes Logo" />
+                  </div>
+                </div>
+
+                <div
+                  className={`title-stack-container ${introStep === 1 ? "intro-centered" : ""}`}
+                  onClick={introStep === 3 ? handleHeroClick : undefined}
+                >
+                  <div className="single-line-text">GELİYORUZ!</div>
+
+                  <div
+                    className={`sub-explode-text ${introStep === 3 ? "exploded" : ""}`}
+                  >
+                    MBMENDERES
+                  </div>
+                </div>
+
+                <div
+                  className={`hero-countdown-wrap ${introStep >= 3 ? "show" : ""}`}
+                >
+                  <Countdown />
+                </div>
+
+                <div
+                  className={`asymmetric-footer ${introStep >= 2 ? "show" : ""}`}
+                >
+                  <button className="cta-btn" onClick={handleHeroCtaClick}>
+                    HEMEN BAŞVUR ➔
+                  </button>
+                </div>
+              </div>
+
+              {interactiveEffects.map((fx) => {
+                if (fx.type === "smoke") {
+                  return (
+                    <div
+                      key={fx.id}
+                      className="smoke-cloud-interactive"
+                      style={{
+                        left: fx.x,
+                        top: fx.y,
+                        width: fx.size,
+                        height: fx.size,
+                      }}
                     >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-
-                    <nav className={`nav-links ${menuOpen ? "open" : ""}`} aria-label="Ana menü">
-                        <a href="#hero" onClick={closeMenu}>ANA SAYFA</a>
-                        <a href="#komiteler" onClick={closeMenu}>KOMİTELER</a>
-                        <a href="#basvuru" onClick={closeMenu}>BAŞVURU</a>
-                        <a href="#basvuru" className="nav-cta" onClick={closeMenu}>
-                            HEMEN BAŞVUR ➔
-                        </a>
-                    </nav>
-                </header>
-            );
-        };
-
-        const SiteFooter = () => (
-            <footer className="site-footer">
-                <div className="footer-inner">
-                    <div className="footer-brand">
-                        <img src={logoUrl} alt="MBM Menderes Logo" className="footer-logo" />
-                        <div className="footer-brand-text">
-                            <span className="footer-title">MBM MENDERES</span>
-                            <span className="footer-sub">MODEL BİRLEŞMİŞ MİLLETLER</span>
-                        </div>
+                      <SmokeCloudSVG color="#FFFFFF" />
                     </div>
-
-                    <div className="footer-credit">
-                        website by: <span>OCAL</span>
-                    </div>
-                </div>
-
-                <div className="footer-bottom">
-                    <span>© {new Date().getFullYear()} MBM Menderes</span>
-                    <span>Adnan Menderes Anadolu Lisesi</span>
-                </div>
-            </footer>
-        );
-
-        const CartoonBrawlFight = () => {
-            const [brawlItems, setBrawlItems] = React.useState([]);
-
-            React.useEffect(() => {
-                const interval = setInterval(() => {
-                    const id = Date.now() + Math.random();
-                    const types = ['smoke', 'fist', 'pow', 'wham', 'bam', 'kaboom', 'zap'];
-                    const type = types[Math.floor(Math.random() * types.length)];
-
-                    const top = Math.floor(Math.random() * 85) + 5;
-                    const left = Math.floor(Math.random() * 85) + 5;
-                    const size = Math.floor(Math.random() * 100) + 110;
-                    const rotate = Math.floor(Math.random() * 80) - 40;
-
-                    const newItem = { id, type, top, left, size, rotate };
-
-                    setBrawlItems(prev => [...prev.slice(-16), newItem]);
-                }, 220);
-
-                return () => clearInterval(interval);
-            }, []);
-
-            return (
-                <div className="brawl-container">
-                    {brawlItems.map((item) => (
-                        <div
-                            key={item.id}
-                            className="brawl-cloud"
-                            style={{
-                                top: `${item.top}%`,
-                                left: `${item.left}%`,
-                                width: `${item.size}px`,
-                                height: `${item.size}px`,
-                                transform: `rotate(${item.rotate}deg)`,
-                                animation: 'punchAnim 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards'
-                            }}
-                        >
-                            {item.type === 'smoke' && <SmokeCloudSVG color="#FFFFFF" />}
-                            {item.type === 'fist' && <FistIconSVG />}
-                            {item.type === 'pow' && <PunchPopSVG text="POW!" />}
-                            {item.type === 'wham' && <PunchPopSVG text="WHAM!" />}
-                            {item.type === 'bam' && <PunchPopSVG text="BAM!" />}
-                            {item.type === 'kaboom' && <PunchPopSVG text="BOOM!" />}
-                            {item.type === 'zap' && <PunchPopSVG text="KAPOW!" />}
-                        </div>
-                    ))}
-                </div>
-            );
-        };
-
-        const App = () => {
-            const [introStep, setIntroStep] = React.useState(1);
-            const [interactiveEffects, setInteractiveEffects] = React.useState([]);
-            const isIntroLocked = introStep < 3;
-
-            React.useEffect(() => {
-                if (!isIntroLocked) return;
-
-                const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-                const previousOverflow = document.body.style.overflow;
-                const previousPaddingRight = document.body.style.paddingRight;
-
-                document.body.style.overflow = "hidden";
-
-                if (scrollbarWidth > 0) {
-                    document.body.style.paddingRight = `${scrollbarWidth}px`;
+                  );
                 }
-
-                window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-
-                const preventScroll = (event) => event.preventDefault();
-                const preventScrollKeys = (event) => {
-                    const blockedKeys = ["ArrowUp", "ArrowDown", "PageUp", "PageDown", "Home", "End", " "];
-
-                    if (blockedKeys.includes(event.key)) {
-                        event.preventDefault();
-                    }
-                };
-
-                window.addEventListener("wheel", preventScroll, { passive: false });
-                window.addEventListener("touchmove", preventScroll, { passive: false });
-                window.addEventListener("keydown", preventScrollKeys);
-
-                return () => {
-                    document.body.style.overflow = previousOverflow;
-                    document.body.style.paddingRight = previousPaddingRight;
-                    window.removeEventListener("wheel", preventScroll);
-                    window.removeEventListener("touchmove", preventScroll);
-                    window.removeEventListener("keydown", preventScrollKeys);
-                };
-            }, [isIntroLocked]);
-
-            React.useEffect(() => {
-                const timer2 = setTimeout(() => {
-                    setIntroStep(2);
-                }, 1800);
-
-                const timer3 = setTimeout(() => {
-                    setIntroStep(3);
-                }, 3000);
-
-                return () => {
-                    clearTimeout(timer2);
-                    clearTimeout(timer3);
-                };
-            }, []);
-
-            const skipIntro = () => {
-                setIntroStep(3);
-            };
-
-            const triggerExplosionFX = (x, y) => {
-                const soundPops = ["BOOM!", "KAPOW!", "BAM!", "ZAP!", "WHAM!"];
-                const randomPop = soundPops[Math.floor(Math.random() * soundPops.length)];
-
-                const newBatch = [
-                    { id: Date.now() + 1, type: 'punch', x: x - 80, y: y - 60, text: randomPop },
-                    { id: Date.now() + 2, type: 'smoke', x: x - 100, y: y - 100, size: 220 },
-                    { id: Date.now() + 3, type: 'smoke', x: x - 160, y: y - 40, size: 150 },
-                    { id: Date.now() + 4, type: 'smoke', x: x + 20, y: y - 40, size: 150 }
-                ];
-
-                setInteractiveEffects((prev) => [...prev, ...newBatch]);
-
-                setTimeout(() => {
-                    setInteractiveEffects((prev) => prev.filter(item => !newBatch.find(b => b.id === item.id)));
-                }, 800);
-            };
-
-            const handleHeroClick = (e) => {
-                const rect = e.currentTarget.getBoundingClientRect();
-                const clickX = e.clientX - rect.left;
-                const clickY = e.clientY - rect.top;
-                triggerExplosionFX(clickX, clickY);
-            };
-
-            const handleHeroCtaClick = (e) => {
-                handleHeroClick(e);
-
-                setTimeout(() => {
-                    const section = document.getElementById("basvuru");
-
-                    if (section) {
-                        section.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }
-                }, 250);
-            };
-
-            return (
-                <>
-                {introStep >= 3 && <Navbar />}
-                <div id="hero">
-                    <div className="comic-panels-bg">
-                        {[...Array(12)].map((_, i) => (
-                            <div key={i} className="comic-panel"></div>
-                        ))}
+                if (fx.type === "punch") {
+                  return (
+                    <div
+                      key={fx.id}
+                      className="punch-fx-interactive"
+                      style={{
+                        left: fx.x,
+                        top: fx.y,
+                      }}
+                    >
+                      <PunchPopSVG text={fx.text} />
                     </div>
+                  );
+                }
+                return null;
+              })}
+            </div>
+            <CommitteesSection />
+            <ApplicationSection />
+            <SiteFooter />
+          </>
+        );
+      };
 
-                    <CartoonBrawlFight />
-
-                    {introStep < 3 && (
-                        <button className="skip-intro-btn" onClick={skipIntro}>
-                            İNTROYU GEÇ ➔
-                        </button>
-                    )}
-
-                    <div className={`asymmetric-container ${introStep >= 1 ? 'visible' : ''}`}>
-                        <div className={`header-asymmetric ${introStep >= 2 ? 'show' : ''}`}>
-                            <div className="logo-badge" title="MBM Menderes Logo">
-                                <img src={logoUrl} alt="MBM Menderes Logo" />
-                            </div>
-                        </div>
-
-                        <div 
-                            className={`title-stack-container ${introStep === 1 ? 'intro-centered' : ''}`}
-                            onClick={introStep === 3 ? handleHeroClick : undefined}
-                        >
-                            <div className="single-line-text">
-                                GELİYORUZ!
-                            </div>
-                            
-                            <div className={`sub-explode-text ${introStep === 3 ? 'exploded' : ''}`}>
-                                MBMENDERES
-                            </div>
-                        </div>
-
-                        <div className={`hero-countdown-wrap ${introStep >= 3 ? 'show' : ''}`}>
-                            <Countdown />
-                        </div>
-
-                        <div className={`asymmetric-footer ${introStep >= 2 ? 'show' : ''}`}>
-                            <button className="cta-btn" onClick={handleHeroCtaClick}>
-                                HEMEN BAŞVUR ➔
-                            </button>
-                        </div>
-                    </div>
-
-                    {interactiveEffects.map((fx) => {
-                        if (fx.type === 'smoke') {
-                            return (
-                                <div
-                                    key={fx.id}
-                                    className="smoke-cloud-interactive"
-                                    style={{
-                                        left: fx.x,
-                                        top: fx.y,
-                                        width: fx.size,
-                                        height: fx.size
-                                    }}
-                                >
-                                    <SmokeCloudSVG color="#FFFFFF" />
-                                </div>
-                            );
-                        }
-                        if (fx.type === 'punch') {
-                            return (
-                                <div
-                                    key={fx.id}
-                                    className="punch-fx-interactive"
-                                    style={{
-                                        left: fx.x,
-                                        top: fx.y
-                                    }}
-                                >
-                                    <PunchPopSVG text={fx.text} />
-                                </div>
-                            );
-                        }
-                        return null;
-                    })}
-                </div>
-                <CommitteesSection />
-                <ApplicationSection />
-                <SiteFooter />
-                </>
-            );
-        };
-
-        const root = ReactDOM.createRoot(document.getElementById('root'));
-        root.render(<App />);
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
     </script>
-</body>
+  </body>
 </html>
